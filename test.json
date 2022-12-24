@@ -1,0 +1,8266 @@
+[
+	{
+		"Challenge": {
+			"Id": "08b7c331-d1a3-4e41-b463-c75b57b936e5",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SA_TIER_III_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SA_TIER_III_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sa_tier_3.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 17,
+					"RequiredChallenges": [
+						"415fe342-2a3e-45a7-9629-1d9d073878d3",
+						"00000006-0000-0000-0000-000000000001",
+						"a8ed014b-7445-4e22-9d83-53e44b18341b",
+						"38df4127-57ab-4ac6-9205-06986132bc7f",
+						"56ac7bf9-2e82-425b-b644-3b1d61fe10c4",
+						"d004cf4e-48cc-4261-b99a-45e3949bdf8b",
+						"48e5f6c5-7116-4ea4-a932-8e8ea6aa481c",
+						"7bd1dbeb-4b2f-4c57-9741-5c5e28b53c23",
+						"597307e4-e92b-4781-981b-1bd20ffc786a",
+						"e27f2f6e-aef1-4147-ba18-388af0e8da4b",
+						"2c5e1a00-4927-4504-af4c-7630d2088673",
+						"61ff5f2a-92ef-47d4-a5da-15d28665906b",
+						"9232950e-30e4-4ca9-87cf-920351d9789a",
+						"a464f48d-5059-4559-9a00-fc2c59251672",
+						"d53b6f4a-a334-41d1-b4a9-09e756fa6365",
+						"655da1b2-bdae-4fcf-ad67-4b4f40b43066",
+						"29042c88-fdbf-4990-bde7-0584027edb7f",
+						"eed87874-5a23-4230-a5ba-220e90372721",
+						"ced93d8f-0000-0000-0000-000000000001",
+						"5146dec1-9b6e-4037-9462-134348b1722d",
+						"f620c1ba-4ae4-4aea-b96a-f684557f0836",
+						"a3204230-2eaf-4fbd-976d-448290a69a4a",
+						"9ed92086-de16-4907-a536-1a30d704f667",
+						"d7ef79ee-58cc-4f47-9196-b5222e0c4317",
+						"a4eefaf7-b885-4f0f-a947-8eb1ae865cd9",
+						"2db8ca18-bd44-483d-b7d9-eb726b259583",
+						"2f47d774-7033-4089-8e52-e3a1bd667859",
+						"c66e9212-b53f-452b-af99-14fed11b6e6a",
+						"acfac6e4-3e98-4dac-a5dd-43155ce82f3d",
+						"7c09b3db-71ea-4f3b-9719-052bdb57ed05",
+						"c929980a-6f5b-4677-9666-4350344f658c",
+						"7d3eb67f-395d-4d96-85a3-0cfb8cda162a",
+						"c4f0976d-ecda-4ae0-80e2-ff4e074177cf",
+						"0b63d39b-c53e-4fa4-a2a3-310a973eb819",
+						"40ba6b62-de82-4b94-ace9-c34917b36cc9",
+						"e5931ee2-09b0-4690-b1d1-854b4e94c955",
+						"0af3980d-6bcb-42f6-ac4c-d0241606500a",
+						"92643706-6f98-4b1c-9700-ee4819aaadb4",
+						"647ac859-f0ac-4a49-9138-f8d8dd8dfc1e"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_MELEE_CLASSIC_FIBER_WIRE"
+			],
+			"LastModified": "2022-05-24T12:26:03.6133433",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "08b7c331-d1a3-4e41-b463-c75b57b936e5",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"40ba6b62-de82-4b94-ace9-c34917b36cc9"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "106f5f94-8ac6-4517-b754-055df40003c9",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CROWDCHOICE_DROWN_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"PollResult_Drown": {
+							"Transition": "Active"
+						}
+					},
+					"Active": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillMethodStrict",
+											"accident_drown"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"high",
+				"crowdchoice"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.4589781",
+			"Xp": 100,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			},
+			"CrowdChoice": {
+				"Tag": "Drown"
+			}
+		},
+		"Progression": {
+			"ChallengeId": "106f5f94-8ac6-4517-b754-055df40003c9",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "143a590c-a42e-421a-83b0-42ea9e2312a3",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_ITEM_OBTAINED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"IntelItemPickedup": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": [
+							{
+								"Actions": {
+									"$pushunique": [
+										"IntelItemPickedup",
+										"$Value.RepositoryId"
+									]
+								},
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.ActionRewardType",
+												"AR_QuestItem"
+											]
+										},
+										{
+											"$not": {
+												"$any": {
+													"?": {
+														"$eq": [
+															"$.#",
+															"$Value.RepositoryId"
+														]
+													},
+													"in": "$.IntelItemPickedup"
+												}
+											}
+										}
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.9030587",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "143a590c-a42e-421a-83b0-42ea9e2312a3",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "19af817d-a942-417e-978e-8864b39e8556",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MISSION_UNNOTICED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Spotted": {
+							"Transition": "Failure"
+						},
+						"ContractEnd": {
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.2225381",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "19af817d-a942-417e-978e-8864b39e8556",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "1c7d6618-26c2-4b9a-86f0-c3afa127fc8d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SA_TIER_I_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SA_TIER_I_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sa_tier_1.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 5,
+					"RequiredChallenges": [
+						"415fe342-2a3e-45a7-9629-1d9d073878d3",
+						"00000006-0000-0000-0000-000000000001",
+						"a8ed014b-7445-4e22-9d83-53e44b18341b",
+						"38df4127-57ab-4ac6-9205-06986132bc7f",
+						"56ac7bf9-2e82-425b-b644-3b1d61fe10c4",
+						"d004cf4e-48cc-4261-b99a-45e3949bdf8b",
+						"48e5f6c5-7116-4ea4-a932-8e8ea6aa481c",
+						"7bd1dbeb-4b2f-4c57-9741-5c5e28b53c23",
+						"597307e4-e92b-4781-981b-1bd20ffc786a",
+						"e27f2f6e-aef1-4147-ba18-388af0e8da4b",
+						"2c5e1a00-4927-4504-af4c-7630d2088673",
+						"61ff5f2a-92ef-47d4-a5da-15d28665906b",
+						"9232950e-30e4-4ca9-87cf-920351d9789a",
+						"a464f48d-5059-4559-9a00-fc2c59251672",
+						"d53b6f4a-a334-41d1-b4a9-09e756fa6365",
+						"655da1b2-bdae-4fcf-ad67-4b4f40b43066",
+						"29042c88-fdbf-4990-bde7-0584027edb7f",
+						"eed87874-5a23-4230-a5ba-220e90372721",
+						"ced93d8f-0000-0000-0000-000000000001",
+						"5146dec1-9b6e-4037-9462-134348b1722d",
+						"f620c1ba-4ae4-4aea-b96a-f684557f0836",
+						"a3204230-2eaf-4fbd-976d-448290a69a4a",
+						"9ed92086-de16-4907-a536-1a30d704f667",
+						"d7ef79ee-58cc-4f47-9196-b5222e0c4317",
+						"a4eefaf7-b885-4f0f-a947-8eb1ae865cd9",
+						"2db8ca18-bd44-483d-b7d9-eb726b259583",
+						"2f47d774-7033-4089-8e52-e3a1bd667859",
+						"c66e9212-b53f-452b-af99-14fed11b6e6a",
+						"acfac6e4-3e98-4dac-a5dd-43155ce82f3d",
+						"7c09b3db-71ea-4f3b-9719-052bdb57ed05",
+						"c929980a-6f5b-4677-9666-4350344f658c",
+						"7d3eb67f-395d-4d96-85a3-0cfb8cda162a",
+						"c4f0976d-ecda-4ae0-80e2-ff4e074177cf",
+						"0b63d39b-c53e-4fa4-a2a3-310a973eb819",
+						"40ba6b62-de82-4b94-ace9-c34917b36cc9",
+						"e5931ee2-09b0-4690-b1d1-854b4e94c955",
+						"0af3980d-6bcb-42f6-ac4c-d0241606500a",
+						"92643706-6f98-4b1c-9700-ee4819aaadb4",
+						"647ac859-f0ac-4a49-9138-f8d8dd8dfc1e"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_TOOL_LOCK_PICK_CLASSIC"
+			],
+			"LastModified": "2022-05-24T12:26:03.5802262",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "1c7d6618-26c2-4b9a-86f0-c3afa127fc8d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"40ba6b62-de82-4b94-ace9-c34917b36cc9"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "1cb6662f-b471-427d-af62-14906ea8f2ed",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_ELUSIVE_TARGETS_1_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ELUSIVE_TARGETS_1_DESC",
+			"ImageName": "images/challenges/profile_challenges/elusive_targets_3.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 3
+				},
+				"Context": {
+					"Completed": [],
+					"Count": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"Completed",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$not": {
+										"$any": {
+											"?": {
+												"$eq": [
+													"$.#",
+													"$ContractId"
+												]
+											},
+											"in": "$.Completed"
+										}
+									}
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						],
+						"ContractStart": {
+							"Condition": {
+								"$not": {
+									"$eq": [
+										"$Value.ContractType",
+										"elusive"
+									]
+								}
+							},
+							"Transition": "Start"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_LEGACY_HERO_ABSOLUTIONSUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.2494788",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "1cb6662f-b471-427d-af62-14906ea8f2ed",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Completed": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3"
+				],
+				"Count": 3,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T09:15:28.6660482+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "1d4b7e46-4d83-4cea-a357-d092eb43cb5d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_EXPLOSION_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_EXPLOSION_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"explosion"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.1088907",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "1d4b7e46-4d83-4cea-a357-d092eb43cb5d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "1d4bbedf-a349-4d2e-b374-c51b4d94b6b1",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_TARGET_UNNOTICED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Checkbodyfound": {
+						"$timer": {
+							"Condition": {
+								"$after": 5
+							},
+							"Transition": "Start"
+						},
+						"BodyFound": {
+							"Transition": "Failure"
+						},
+						"Spotted": {
+							"Transition": "Failure"
+						},
+						"Unnoticed_Kill": {
+							"Transition": "Success"
+						}
+					},
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$eq": [
+									"$Value.IsTarget",
+									true
+								]
+							},
+							"Transition": "Checkbodyfound"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.95018",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "1d4bbedf-a349-4d2e-b374-c51b4d94b6b1",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "20263647-00e8-4a7d-855c-2dc8ba4d6b4b",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_AREA_DISCOVERED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"AreaDiscovered": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"mediumxp+",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.849097",
+			"Xp": 75,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "20263647-00e8-4a7d-855c-2dc8ba4d6b4b",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-20T11:18:34.5273334+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "25221ea4-3e99-4c1e-9cdd-dd02c2063248",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MISSION_SA_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"RecordingDestroyed": true,
+					"_SessionRewards": [],
+					"Targets": [],
+					"Witnesses": [],
+					"LastAccidentTime": 0
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"CheckNoticedKill": {
+						"DeadBodySeen": {
+							"Transition": "Failure"
+						},
+						"Unnoticed_Kill": {
+							"Transition": "Start"
+						}
+					},
+					"Start": {
+						"AccidentBodyFound": {
+							"$set": [
+								"LastAccidentTime",
+								"$Timestamp"
+							]
+						},
+						"MurderedBodySeen": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsWitnessTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Witnesses",
+										"$Value.Witness"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsWitnessTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$.LastAccidentTime",
+													"$Timestamp"
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							}
+						],
+						"ContractEnd": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											true,
+											"$.RecordingDestroyed"
+										]
+									},
+									{
+										"$all": {
+											"in": "$.Witnesses",
+											"?": {
+												"$any": {
+													"in": "$.Targets",
+													"?": {
+														"$eq": [
+															"$.#",
+															"$.##"
+														]
+													}
+												}
+											}
+										}
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						},
+						"CrowdNPC_Died": {
+							"Transition": "Failure"
+						},
+						"Witnesses": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Spotted": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Kill": [
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$Value.KillContext",
+													1
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												true
+											]
+										},
+										{
+											"$eq": [
+												"$Value.Accident",
+												false
+											]
+										}
+									]
+								},
+								"Transition": "CheckNoticedKill"
+							}
+						],
+						"SecuritySystemRecorder": [
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										false
+									]
+								},
+								"Condition": {
+									"$eq": [
+										"$Value.event",
+										"spotted"
+									]
+								}
+							},
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								},
+								"Condition": {
+									"$or": [
+										{
+											"$eq": [
+												"$Value.event",
+												"erased"
+											]
+										},
+										{
+											"$eq": [
+												"$Value.event",
+												"destroyed"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.2421182",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "25221ea4-3e99-4c1e-9cdd-dd02c2063248",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "2bf91975-0da8-436d-8b4c-ce1c5727bb6e",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MELEE_KILL_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_MELEE_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"melee"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.0389148",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "2bf91975-0da8-436d-8b4c-ce1c5727bb6e",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "2debf12d-726b-4bc4-9ea7-8526c1499988",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MELEE_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_MELEE_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"melee"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.0970658",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "2debf12d-726b-4bc4-9ea7-8526c1499988",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "33744252-626d-45dc-94b1-c116be0a7a98",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SASO_TIER_II_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SASO_TIER_II_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_saso_tier_2.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 12,
+					"RequiredChallenges": [
+						"11f14b4d-f86f-4545-ac32-27d95d484729",
+						"00000006-0000-0000-0000-000000000002",
+						"adca040b-61da-4eae-afaa-232f30c187c4",
+						"66a0fca7-59eb-4697-b643-5d0d08b439c3",
+						"08457a95-ab19-4d46-b825-4150f310f217",
+						"c2739bf2-d5f1-486c-8f5a-e766d699e1a0",
+						"7107ff08-2d82-4abd-83e5-57d0e1b919ff",
+						"9696ce8f-f505-4d91-80fe-d4e9d51a5b5b",
+						"99e006bc-7437-4058-ba4c-a38beb6d63f3",
+						"8d43608c-5706-4311-8f71-038e90574b34",
+						"10c23230-bd47-4386-846e-9a2b8e3b51d9",
+						"b7d311d8-c71a-4cfd-a768-7367f9b5e366",
+						"64ec75c2-2c6e-4578-a0d4-d9d31d7cc70c",
+						"507257e0-53b2-4385-9a88-c3a25637f008",
+						"529dbda2-c03e-4702-83be-45ec5c892d04",
+						"dd0b94a4-bc53-44f2-bef6-12de2637c4da",
+						"119553ef-4ea6-4366-8303-49fb3d082eea",
+						"969f8855-6727-4cf4-bfa9-a40e4460f7ae",
+						"5e92a9eb-599f-49cb-9e69-4baaf9d0bdc2",
+						"2d17c8fc-bf8e-4d00-aaf8-2ecd065374f3",
+						"8955135e-6aaf-422f-b6bc-75d298d3acf0",
+						"a23b0f09-a4ae-44a8-be7b-65afb47325f6",
+						"4ada947d-4934-4732-9612-ec5e382e7f34",
+						"5f801945-7315-470d-a602-f7891030fb63",
+						"aadedeb0-3005-4693-ae1d-1d86f2aa06e4",
+						"19ef07a7-65ed-454c-a789-f843f7e12939",
+						"cda55c37-7605-4239-9aad-8c162d0cdaa9",
+						"9aa98c98-2f2b-41c7-9ebe-7550bc90953d",
+						"8752b6fc-f435-4a33-a0f2-277f7f90bd60",
+						"c8cf11a8-d0c6-4dd9-aad4-cf2f36f5bead",
+						"0d02acc0-badc-41d0-a60a-b9376a0949bb",
+						"682fe23c-5d0a-414c-8b88-cb4472856a1b",
+						"6ca5490e-b6c1-420d-b4bd-3469ef253983",
+						"53a17fb0-f6ef-449f-a346-ff0b52c918e7",
+						"246f098c-3e1d-428e-bcf5-5fce86e2a5b8",
+						"cba9f315-1e45-45a1-997a-15ed7743449d",
+						"f84b1f7c-540d-4237-a73b-cde321af6ff3",
+						"425a7a49-1892-4a24-aa40-f46cdb8d6c7f"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"FIREARMS_PISTOL_CLASSIC_SILVERBALLER"
+			],
+			"LastModified": "2022-05-24T12:26:03.6368485",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "33744252-626d-45dc-94b1-c116be0a7a98",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"53a17fb0-f6ef-449f-a346-ff0b52c918e7"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "3485dbc5-a088-49b8-aaa4-14b26045e6ae",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_TARGET_KILL_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$eq": [
+									"$Value.IsTarget",
+									true
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"mediumxp",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.9252488",
+			"Xp": 50,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "3485dbc5-a088-49b8-aaa4-14b26045e6ae",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "3a479ece-ebb2-4327-9d9b-b83291874794",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MISSION_COMPLETED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ContractEnd": {
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate-",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.1733493",
+			"Xp": 20,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "3a479ece-ebb2-4327-9d9b-b83291874794",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "3fb19b74-f818-4c65-8018-42dc37ccd298",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_FRESH_DISGUISE_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"DisguiseEquipped": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"StartingSuit": {
+							"$pushunique": [
+								"DisguiseEquipped",
+								"$Value"
+							]
+						},
+						"Disguise": {
+							"Condition": {
+								"$pushunique": [
+									"DisguiseEquipped",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.1630991",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "3fb19b74-f818-4c65-8018-42dc37ccd298",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "47ea98fa-c466-4828-b8a2-456d80e15cfa",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CROWDCHOICE_HEADSHOT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"PollResult_HeadShot": {
+							"Transition": "Active"
+						}
+					},
+					"Active": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsHeadshot",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"high",
+				"crowdchoice"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.4258505",
+			"Xp": 100,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			},
+			"CrowdChoice": {
+				"Tag": "HeadShot"
+			}
+		},
+		"Progression": {
+			"ChallengeId": "47ea98fa-c466-4828-b8a2-456d80e15cfa",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "4e6c96b0-70f0-4bb4-be36-3b5afbfe533f",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_TARGET_ACCIDENT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.Accident",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"mediumxp",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.9742014",
+			"Xp": 50,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "4e6c96b0-70f0-4bb4-be36-3b5afbfe533f",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "4e75c96a-44a5-4545-a92f-0d486b2191a0",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_POISON_KILL_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_POISON_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"poison"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.0206909",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "4e75c96a-44a5-4545-a92f-0d486b2191a0",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "5f9e0e26-e763-4860-b0b2-f0d8cd77d8ff",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CROWDCHOICE_FIBERWIRE_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"PollResult_FibreWire": {
+							"Transition": "Active"
+						}
+					},
+					"Active": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillItemCategory",
+											"fiberwire"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"high",
+				"crowdchoice"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.4363291",
+			"Xp": 100,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			},
+			"CrowdChoice": {
+				"Tag": "FibreWire"
+			}
+		},
+		"Progression": {
+			"ChallengeId": "5f9e0e26-e763-4860-b0b2-f0d8cd77d8ff",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "640e0506-4a32-4bc9-90af-1b78bfd91f0c",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CAMERA_DESTROYED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"SecuritySystemRecorder": [
+							{
+								"Condition": {
+									"$eq": [
+										"CameraDestroyed",
+										"$Value.event"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8139492",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "640e0506-4a32-4bc9-90af-1b78bfd91f0c",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "643707a0-665e-4f9c-9b14-fd13903d75dc",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_GUARD_HEADSHOT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.ActorType",
+											1
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsHeadshot",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											false
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"very-low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.1020902",
+			"Xp": 5,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign",
+					"usercreated",
+					"creation",
+					"featured"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "643707a0-665e-4f9c-9b14-fd13903d75dc",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-06-03T16:55:46.2786403+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "6aab8b21-0483-4baa-abeb-12d943957a44",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_BALLISTIC_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_BALLISTIC_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"ballistic"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.1031221",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "6aab8b21-0483-4baa-abeb-12d943957a44",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "6d09a88f-da32-4368-b8be-d4ab0c66152f",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MISSION_TARGETS_ONLY_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$eq": [
+									"$Value.IsTarget",
+									false
+								]
+							},
+							"Transition": "Failure"
+						},
+						"ContractEnd": {
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.2002902",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "6d09a88f-da32-4368-b8be-d4ab0c66152f",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "7b6082fa-76f4-456c-a4a2-c8b84f9d63db",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_SA_ELUSIVE_TARGETS_II_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_SA_ELUSIVE_TARGETS_II_DESC",
+			"ImageName": "images/challenges/profile_challenges/sa_elusive_target_2.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 5
+				},
+				"Context": {
+					"CompletedSA": [],
+					"Count": 0,
+					"RecordingDestroyed": true,
+					"Witnesses": [],
+					"Targets": [],
+					"LastAccidentTime": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Actions": [
+								{
+									"$reset": "Witnesses"
+								},
+								{
+									"$reset": "Targets"
+								},
+								{
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								}
+							],
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractStart": [
+							{
+								"Actions": [
+									{
+										"$reset": "Witnesses"
+									},
+									{
+										"$reset": "Targets"
+									},
+									{
+										"$set": [
+											"RecordingDestroyed",
+											true
+										]
+									}
+								]
+							},
+							{
+								"Condition": {
+									"$not": {
+										"$eq": [
+											"$Value.ContractType",
+											"elusive"
+										]
+									}
+								},
+								"Transition": "Start"
+							}
+						],
+						"AccidentBodyFound": {
+							"$set": [
+								"LastAccidentTime",
+								"$Timestamp"
+							]
+						},
+						"MurderedBodySeen": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsWitnessTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Witnesses",
+										"$Value.Witness"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsWitnessTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$.LastAccidentTime",
+													"$Timestamp"
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Start"
+							}
+						],
+						"Witnesses": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Spotted": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"CompletedSA",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												true,
+												"$.RecordingDestroyed"
+											]
+										},
+										{
+											"$all": {
+												"in": "$.Witnesses",
+												"?": {
+													"$any": {
+														"in": "$.Targets",
+														"?": {
+															"$eq": [
+																"$.#",
+																"$.##"
+															]
+														}
+													}
+												}
+											}
+										},
+										{
+											"$not": {
+												"$any": {
+													"?": {
+														"$eq": [
+															"$.#",
+															"$ContractId"
+														]
+													},
+													"in": "$.CompletedSA"
+												}
+											}
+										}
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						],
+						"CrowdNPC_Died": {
+							"Transition": "Start"
+						},
+						"Kill": [
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$Value.KillContext",
+													1
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Start"
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							}
+						],
+						"SecuritySystemRecorder": [
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										false
+									]
+								},
+								"Condition": {
+									"$eq": [
+										"$Value.event",
+										"spotted"
+									]
+								}
+							},
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								},
+								"Condition": {
+									"$or": [
+										{
+											"$eq": [
+												"$Value.event",
+												"erased"
+											]
+										},
+										{
+											"$eq": [
+												"$Value.event",
+												"destroyed"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_HERO_WINTER_SUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.34467",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "7b6082fa-76f4-456c-a4a2-c8b84f9d63db",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedSA": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"7c79dcd8-0f0c-41c9-9963-4563a4e2db7f",
+					"332e588b-80a3-4cb0-abc6-dc8de3d89e83",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3"
+				],
+				"Count": 5,
+				"RecordingDestroyed": true,
+				"Witnesses": [],
+				"Targets": [],
+				"LastAccidentTime": 0,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T09:15:28.6660482+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "7e51959e-685a-4922-bd7f-81478356714a",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_BALLISTIC_KILL_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_BALLISTIC_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"ballistic"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.0583067",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "7e51959e-685a-4922-bd7f-81478356714a",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "817faf2a-fee7-4166-9332-39ef30a7f1d0",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_ELUSIVE_TARGETS_3_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ELUSIVE_TARGETS_3_DESC",
+			"ImageName": "images/challenges/profile_challenges/elusive_targets_9.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 9
+				},
+				"Context": {
+					"Completed": [],
+					"Count": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"Completed",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$not": {
+										"$any": {
+											"?": {
+												"$eq": [
+													"$.#",
+													"$ContractId"
+												]
+											},
+											"in": "$.Completed"
+										}
+									}
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						],
+						"ContractStart": {
+							"Condition": {
+								"$not": {
+									"$eq": [
+										"$Value.ContractType",
+										"elusive"
+									]
+								}
+							},
+							"Transition": "Start"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_LEGACY_HERO_SIGNATURESUITANDGLOVES"
+			],
+			"LastModified": "2021-02-23T13:33:34.2863995",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "817faf2a-fee7-4166-9332-39ef30a7f1d0",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Completed": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"7c79dcd8-0f0c-41c9-9963-4563a4e2db7f",
+					"332e588b-80a3-4cb0-abc6-dc8de3d89e83",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3",
+					"28aa7003-1917-46e4-bad4-0f43112aae4e",
+					"dce08b14-b14a-4c14-aea9-a2eb5222f889",
+					"654685ab-d52d-49cb-815d-f98ee00454d3",
+					"ca86c369-320f-49ca-989d-bd727951b9ef"
+				],
+				"Count": 9,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T09:16:01.0353535+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "8282f89f-26b5-4a30-8eac-0afe7a2850d4",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_HEADSHOT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsHeadshot",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.9983105",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "8282f89f-26b5-4a30-8eac-0afe7a2850d4",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "84176d41-94a2-433d-90da-02334291642d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SASO_TIER_I_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SASO_TIER_I_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_saso_tier_1.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 5,
+					"RequiredChallenges": [
+						"11f14b4d-f86f-4545-ac32-27d95d484729",
+						"00000006-0000-0000-0000-000000000002",
+						"adca040b-61da-4eae-afaa-232f30c187c4",
+						"66a0fca7-59eb-4697-b643-5d0d08b439c3",
+						"08457a95-ab19-4d46-b825-4150f310f217",
+						"c2739bf2-d5f1-486c-8f5a-e766d699e1a0",
+						"7107ff08-2d82-4abd-83e5-57d0e1b919ff",
+						"9696ce8f-f505-4d91-80fe-d4e9d51a5b5b",
+						"99e006bc-7437-4058-ba4c-a38beb6d63f3",
+						"8d43608c-5706-4311-8f71-038e90574b34",
+						"10c23230-bd47-4386-846e-9a2b8e3b51d9",
+						"b7d311d8-c71a-4cfd-a768-7367f9b5e366",
+						"64ec75c2-2c6e-4578-a0d4-d9d31d7cc70c",
+						"507257e0-53b2-4385-9a88-c3a25637f008",
+						"529dbda2-c03e-4702-83be-45ec5c892d04",
+						"dd0b94a4-bc53-44f2-bef6-12de2637c4da",
+						"119553ef-4ea6-4366-8303-49fb3d082eea",
+						"969f8855-6727-4cf4-bfa9-a40e4460f7ae",
+						"5e92a9eb-599f-49cb-9e69-4baaf9d0bdc2",
+						"2d17c8fc-bf8e-4d00-aaf8-2ecd065374f3",
+						"8955135e-6aaf-422f-b6bc-75d298d3acf0",
+						"a23b0f09-a4ae-44a8-be7b-65afb47325f6",
+						"4ada947d-4934-4732-9612-ec5e382e7f34",
+						"5f801945-7315-470d-a602-f7891030fb63",
+						"aadedeb0-3005-4693-ae1d-1d86f2aa06e4",
+						"19ef07a7-65ed-454c-a789-f843f7e12939",
+						"cda55c37-7605-4239-9aad-8c162d0cdaa9",
+						"9aa98c98-2f2b-41c7-9ebe-7550bc90953d",
+						"8752b6fc-f435-4a33-a0f2-277f7f90bd60",
+						"c8cf11a8-d0c6-4dd9-aad4-cf2f36f5bead",
+						"0d02acc0-badc-41d0-a60a-b9376a0949bb",
+						"682fe23c-5d0a-414c-8b88-cb4472856a1b",
+						"6ca5490e-b6c1-420d-b4bd-3469ef253983",
+						"53a17fb0-f6ef-449f-a346-ff0b52c918e7",
+						"246f098c-3e1d-428e-bcf5-5fce86e2a5b8",
+						"cba9f315-1e45-45a1-997a-15ed7743449d",
+						"f84b1f7c-540d-4237-a73b-cde321af6ff3",
+						"425a7a49-1892-4a24-aa40-f46cdb8d6c7f"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_POISON_CLASSIC_PILLS_LETHAL"
+			],
+			"LastModified": "2022-05-24T12:26:03.6255675",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "84176d41-94a2-433d-90da-02334291642d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"53a17fb0-f6ef-449f-a346-ff0b52c918e7"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "89c2ec99-78d2-49f6-982f-2ccdf19ff32c",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_EXPLOSION_KILL_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_EXPLOSION_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"explosion"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.0795017",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "89c2ec99-78d2-49f6-982f-2ccdf19ff32c",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "8fca391e-0ff6-451c-9894-e38cb604ea86",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_UNNOTICED_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_UNNOTICED_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Checkbodyfound": {
+						"$timer": {
+							"Condition": {
+								"$after": 5
+							},
+							"Transition": "Start"
+						},
+						"BodyFound": {
+							"Transition": "Failure"
+						},
+						"Spotted": {
+							"Transition": "Failure"
+						},
+						"Unnoticed_Kill": {
+							"Transition": "Success"
+						}
+					},
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$eq": [
+									"$Value.IsTarget",
+									true
+								]
+							},
+							"Transition": "Checkbodyfound"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.0852276",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "8fca391e-0ff6-451c-9894-e38cb604ea86",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start",
+				"$StateEntryTime": 1,
+				"$TimerEntryEvent": {
+					"CreatedAt": "2022-05-27T20:24:51.3001242Z",
+					"Token": "637892798913001242",
+					"Id": "34f3a357-0826-4fa2-81a0-be9739188d92",
+					"Name": "Kill",
+					"UserId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+					"ContractId": "6d3db235-ea1c-4e14-b677-e5f28b7f0fcc",
+					"SessionId": "2OLOOvXidK0Ws4Q4ZRmtoXlEjrgdTSJr-BqdmFbISxX",
+					"ContractSessionId": "2517486177106215314-d8efa831-2f01-4686-91bb-98e6711911b0",
+					"Timestamp": 1,
+					"Value": {
+						"Accident": true,
+						"ActorId": 0,
+						"ActorName": "",
+						"ActorPosition": "0.0, 0.0, 0.0",
+						"ActorType": 1,
+						"BodyPartId": 1,
+						"DamageEvents": [],
+						"ExplosionType": 1,
+						"Explosive": true,
+						"HeroPosition": "0.0, 0.0, 0.0",
+						"History": [],
+						"IsHeadshot": true,
+						"IsMoving": true,
+						"IsTarget": true,
+						"KillClass": "",
+						"KillContext": 1,
+						"KillItemCategory": "",
+						"KillItemInstanceId": "",
+						"KillItemRepositoryId": "",
+						"KillMethodBroad": "",
+						"KillMethodStrict": "",
+						"KillType": 1,
+						"OutfitIsHitmanSuit": true,
+						"OutfitRepositoryId": "",
+						"PlayerId": 0,
+						"Projectile": true,
+						"RepositoryId": "3798fcf3-4e33-40db-a8a2-c160a3ec55bf",
+						"RoomId": 1,
+						"Sniper": true,
+						"ThroughWall": true,
+						"TotalDamage": 1000,
+						"WeaponSilenced": true
+					},
+					"Origin": "gameclient",
+					"Version": {
+						"Major": 8,
+						"Minor": 8,
+						"Build": 0,
+						"Revision": 42,
+						"MajorRevision": 0,
+						"MinorRevision": 42
+					},
+					"IsReplicated": false
+				}
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "9b805891-5899-48be-baf9-75b91dda77fa",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_ELUSIVE_TARGETS_5_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ELUSIVE_TARGETS_5_DESC",
+			"ImageName": "images/challenges/profile_challenges/elusive_targets_15.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 15
+				},
+				"Context": {
+					"Completed": [],
+					"Count": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"Completed",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$not": {
+										"$any": {
+											"?": {
+												"$eq": [
+													"$.#",
+													"$ContractId"
+												]
+											},
+											"in": "$.Completed"
+										}
+									}
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						],
+						"ContractStart": {
+							"Condition": {
+								"$not": {
+									"$eq": [
+										"$Value.ContractType",
+										"elusive"
+									]
+								}
+							},
+							"Transition": "Start"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_ELUSIVE_COMPLETE_15_SUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.3150367",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "9b805891-5899-48be-baf9-75b91dda77fa",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Completed": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"7c79dcd8-0f0c-41c9-9963-4563a4e2db7f",
+					"332e588b-80a3-4cb0-abc6-dc8de3d89e83",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3",
+					"28aa7003-1917-46e4-bad4-0f43112aae4e",
+					"dce08b14-b14a-4c14-aea9-a2eb5222f889",
+					"654685ab-d52d-49cb-815d-f98ee00454d3",
+					"ca86c369-320f-49ca-989d-bd727951b9ef",
+					"81e01a84-7c7f-4967-a4e6-a5450c5cf274",
+					"9f5b8d74-1f70-49ea-94e2-21d2de3e5cf3",
+					"244eb6cf-6a0c-422e-ac03-4ffd85657852",
+					"655c5a57-69d1-48b6-a14b-2ae396c16174"
+				],
+				"Count": 13,
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "9bb822a6-a174-4bd8-8d80-116612b75bd2",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_POISON_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_POISON_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"poison"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.0909942",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "9bb822a6-a174-4bd8-8d80-116612b75bd2",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "9da94512-ad16-441d-9f7d-56826802203a",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SA_TIER_II_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SA_TIER_II_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sa_tier_2.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 12,
+					"RequiredChallenges": [
+						"415fe342-2a3e-45a7-9629-1d9d073878d3",
+						"00000006-0000-0000-0000-000000000001",
+						"a8ed014b-7445-4e22-9d83-53e44b18341b",
+						"38df4127-57ab-4ac6-9205-06986132bc7f",
+						"56ac7bf9-2e82-425b-b644-3b1d61fe10c4",
+						"d004cf4e-48cc-4261-b99a-45e3949bdf8b",
+						"48e5f6c5-7116-4ea4-a932-8e8ea6aa481c",
+						"7bd1dbeb-4b2f-4c57-9741-5c5e28b53c23",
+						"597307e4-e92b-4781-981b-1bd20ffc786a",
+						"e27f2f6e-aef1-4147-ba18-388af0e8da4b",
+						"2c5e1a00-4927-4504-af4c-7630d2088673",
+						"61ff5f2a-92ef-47d4-a5da-15d28665906b",
+						"9232950e-30e4-4ca9-87cf-920351d9789a",
+						"a464f48d-5059-4559-9a00-fc2c59251672",
+						"d53b6f4a-a334-41d1-b4a9-09e756fa6365",
+						"655da1b2-bdae-4fcf-ad67-4b4f40b43066",
+						"29042c88-fdbf-4990-bde7-0584027edb7f",
+						"eed87874-5a23-4230-a5ba-220e90372721",
+						"ced93d8f-0000-0000-0000-000000000001",
+						"5146dec1-9b6e-4037-9462-134348b1722d",
+						"f620c1ba-4ae4-4aea-b96a-f684557f0836",
+						"a3204230-2eaf-4fbd-976d-448290a69a4a",
+						"9ed92086-de16-4907-a536-1a30d704f667",
+						"d7ef79ee-58cc-4f47-9196-b5222e0c4317",
+						"a4eefaf7-b885-4f0f-a947-8eb1ae865cd9",
+						"2db8ca18-bd44-483d-b7d9-eb726b259583",
+						"2f47d774-7033-4089-8e52-e3a1bd667859",
+						"c66e9212-b53f-452b-af99-14fed11b6e6a",
+						"acfac6e4-3e98-4dac-a5dd-43155ce82f3d",
+						"7c09b3db-71ea-4f3b-9719-052bdb57ed05",
+						"c929980a-6f5b-4677-9666-4350344f658c",
+						"7d3eb67f-395d-4d96-85a3-0cfb8cda162a",
+						"c4f0976d-ecda-4ae0-80e2-ff4e074177cf",
+						"0b63d39b-c53e-4fa4-a2a3-310a973eb819",
+						"40ba6b62-de82-4b94-ace9-c34917b36cc9",
+						"e5931ee2-09b0-4690-b1d1-854b4e94c955",
+						"0af3980d-6bcb-42f6-ac4c-d0241606500a",
+						"92643706-6f98-4b1c-9700-ee4819aaadb4",
+						"647ac859-f0ac-4a49-9138-f8d8dd8dfc1e"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_TOOL_COIN_CLASSIC"
+			],
+			"LastModified": "2022-05-24T12:26:03.5942375",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "9da94512-ad16-441d-9f7d-56826802203a",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"40ba6b62-de82-4b94-ace9-c34917b36cc9"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "9f2c99b0-1f6c-4c95-a8f0-76ac78666e0b",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_SILENT_TAKEDOWN_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"CheckUnnoticed": {
+						"$timer": {
+							"Condition": {
+								"$after": 5
+							},
+							"Transition": "Start"
+						},
+						"BodyFound": {
+							"Transition": "Failure"
+						},
+						"Spotted": {
+							"Transition": "Failure"
+						},
+						"Unnoticed_Pacified": {
+							"Transition": "Success"
+						}
+					},
+					"Start": {
+						"Pacify": {
+							"Transition": "CheckUnnoticed"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8352741",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "9f2c99b0-1f6c-4c95-a8f0-76ac78666e0b",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "a25014b3-82c3-45d2-8d28-1c9e80e8808c",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_ACCIDENT_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_ACCIDENT_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.Accident",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.0743994",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "a25014b3-82c3-45d2-8d28-1c9e80e8808c",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start",
+				"_SysVars": {
+					"Repeatable": {
+						"SuccessCount": 13,
+						"CompletionCount": 6
+					}
+				}
+			},
+			"CompletedAt": "2022-05-28T03:15:48.0071417+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "a4f98af3-2aab-4ada-803c-cffc1b13f4c2",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_BODY_HIDDEN_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"BodyHidden": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8618652",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "a4f98af3-2aab-4ada-803c-cffc1b13f4c2",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-06-24T17:13:09.8717412+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "a7a18db7-4bec-4e18-bb37-d052c35a572d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CONTRACT_FOX_TARGET_REVEALED",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"FoxTargetIdEvent": {
+							"Transition": "Success"
+						},
+						"Level_Setup_Events": {
+							"Condition": {
+								"$eq": [
+									"FoxTargetIdentification",
+									"$Value.Contract_Name_metricvalue"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.3428001",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "a7a18db7-4bec-4e18-bb37-d052c35a572d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "a84c010f-c7dd-452e-99b3-51c25ada3cab",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_MISSION_SUIT_ONLY_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ContractStart": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsHitmanSuit",
+										true
+									]
+								},
+								"Transition": "CheckDisguise"
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsHitmanSuit",
+										false
+									]
+								},
+								"Transition": "Failure"
+							}
+						]
+					},
+					"CheckDisguise": {
+						"Disguise": {
+							"Transition": "Failure"
+						},
+						"ContractEnd": {
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.2682619",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "a84c010f-c7dd-452e-99b3-51c25ada3cab",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "afdb9b3f-5d19-41dd-a406-51b560f2cde2",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_ELUSIVE_TARGETS_4_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ELUSIVE_TARGETS_4_DESC",
+			"ImageName": "images/challenges/profile_challenges/elusive_targets_12.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 12
+				},
+				"Context": {
+					"Completed": [],
+					"Count": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"Completed",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$not": {
+										"$any": {
+											"?": {
+												"$eq": [
+													"$.#",
+													"$ContractId"
+												]
+											},
+											"in": "$.Completed"
+										}
+									}
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						],
+						"ContractStart": {
+							"Condition": {
+								"$not": {
+									"$eq": [
+										"$Value.ContractType",
+										"elusive"
+									]
+								}
+							},
+							"Transition": "Start"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_ELUSIVE_COMPLETE_12_SUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.3015668",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "afdb9b3f-5d19-41dd-a406-51b560f2cde2",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Completed": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"7c79dcd8-0f0c-41c9-9963-4563a4e2db7f",
+					"332e588b-80a3-4cb0-abc6-dc8de3d89e83",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3",
+					"28aa7003-1917-46e4-bad4-0f43112aae4e",
+					"dce08b14-b14a-4c14-aea9-a2eb5222f889",
+					"654685ab-d52d-49cb-815d-f98ee00454d3",
+					"ca86c369-320f-49ca-989d-bd727951b9ef",
+					"81e01a84-7c7f-4967-a4e6-a5450c5cf274",
+					"9f5b8d74-1f70-49ea-94e2-21d2de3e5cf3",
+					"244eb6cf-6a0c-422e-ac03-4ffd85657852"
+				],
+				"Count": 12,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T09:20:40.8387137+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "b1a85feb-55af-4707-8271-b3522661c0b1",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_SILENT_ASSASSIN_FEEDBACK_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_SILENT_ASSASSIN_FEEDBACK_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {
+					"Witnesses": [],
+					"KilledTargets": [],
+					"RecordingDestroyed": true,
+					"LastAccidentTime": 0
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ContractEnd": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											true,
+											"$.RecordingDestroyed"
+										]
+									},
+									{
+										"$all": {
+											"in": "$.Witnesses",
+											"?": {
+												"$any": {
+													"in": "$.KilledTargets",
+													"?": {
+														"$eq": [
+															"$.#",
+															"$.##"
+														]
+													}
+												}
+											}
+										}
+									}
+								]
+							},
+							"Transition": "Success"
+						},
+						"AccidentBodyFound": {
+							"$set": [
+								"LastAccidentTime",
+								"$Timestamp"
+							]
+						},
+						"Witnesses": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Spotted": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Kill": [
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$Value.KillContext",
+													1
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"KilledTargets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"KilledTargets",
+										"$Value.RepositoryId"
+									]
+								}
+							}
+						],
+						"CrowdNPC_Died": {
+							"Transition": "Failure"
+						},
+						"MurderedBodySeen": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsWitnessTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Witnesses",
+										"$Value.Witness"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsWitnessTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$.LastAccidentTime",
+													"$Timestamp"
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							}
+						],
+						"SecuritySystemRecorder": [
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										false
+									]
+								},
+								"Condition": {
+									"$eq": [
+										"$Value.event",
+										"spotted"
+									]
+								}
+							},
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								},
+								"Condition": {
+									"$or": [
+										{
+											"$eq": [
+												"$Value.event",
+												"erased"
+											]
+										},
+										{
+											"$eq": [
+												"$Value.event",
+												"destroyed"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				"ContextListeners": {
+					"RecordingDestroyed": {
+						"type": "toggle"
+					},
+					"KilledTargets": {
+						"comparand": "$.Witnesses",
+						"type": "matcharrays"
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud",
+				"sa-feedback"
+			],
+			"Drops": [],
+			"LastModified": "2022-01-20T12:29:17.2972109",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"arcade"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "b1a85feb-55af-4707-8271-b3522661c0b1",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": "2022-08-21T09:20:50.5106923+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "b3be835a-0fc4-4caa-b5be-dfd9a621ec12",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_KEY_OBTAINED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$Value.ActionRewardType",
+									"AR_Key"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8894688",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "b3be835a-0fc4-4caa-b5be-dfd9a621ec12",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "b55bb4da-bb14-46a4-9975-af79e5a3e088",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_HEADSHOT_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_HEADSHOT_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 10,
+					"Delta": 10
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsHeadshot",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.07981",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "b55bb4da-bb14-46a4-9975-af79e5a3e088",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start",
+				"_SysVars": {
+					"Repeatable": {
+						"SuccessCount": 10,
+						"CompletionCount": 6
+					}
+				}
+			},
+			"CompletedAt": "2022-05-28T03:15:48.0071417+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "b6cc96db-9cd4-4d79-93a9-da33e887683b",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CROWDCHOICE_POISON_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"PollResult_Poison": {
+							"Transition": "Active"
+						}
+					},
+					"Active": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"poison"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"high",
+				"crowdchoice"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.4697177",
+			"Xp": 100,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			},
+			"CrowdChoice": {
+				"Tag": "Poison"
+			}
+		},
+		"Progression": {
+			"ChallengeId": "b6cc96db-9cd4-4d79-93a9-da33e887683b",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "baa81f5b-c1de-44e2-8217-8d96cf2f5f17",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_RECORDING_DELETED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"SecuritySystemRecorder": {
+							"Condition": {
+								"$or": [
+									{
+										"$eq": [
+											"$Value.event",
+											"erased"
+										]
+									},
+									{
+										"$eq": [
+											"$Value.event",
+											"destroyed"
+										]
+									}
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"mediumxp",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8253081",
+			"Xp": 50,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "baa81f5b-c1de-44e2-8217-8d96cf2f5f17",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "be7c8370-317b-444c-aa70-bb58c125d31d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_I_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_I_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sniper_tier_1.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 5,
+					"RequiredChallenges": [
+						"990c2b85-e6ed-46e7-913f-7bd0ba54cb92",
+						"98f40445-5350-4669-838c-467c9bb588cb",
+						"0a4678f9-025f-4497-8a30-8efaac9bbca4",
+						"25a17321-b065-4d4e-9a73-6fcc97940dcd",
+						"9e133eb9-ed43-424b-b9e5-2398923efe50",
+						"aa210ee2-bb45-4819-abba-af4094917d92",
+						"78cd6055-0f50-48a3-9c97-4c0dd2b200af",
+						"6dfc70aa-05dd-4ae7-897e-ad4fb303b223",
+						"29acb552-1c22-4995-bbb7-d29e827b26b2",
+						"9ff18ae7-9c5e-45a2-8753-7d40752ab992",
+						"a7eee40e-0fa0-418d-be84-22135176764f",
+						"8a017de7-d90e-4b7a-8b95-ddafaac6c000",
+						"0700c419-2b8d-415c-99be-ddbb1120c55a",
+						"c88429f2-481d-46cc-b479-ffdabe0e0e34",
+						"37faedc3-5ad8-4eba-94ff-484abddb395d",
+						"7fb6e4dc-aabd-4f98-b35d-2f0a839b716f",
+						"ced93d8f-0000-0000-0000-000000000003",
+						"17fdac23-9554-4714-9853-bc8c0ff905fc",
+						"b6caebc2-0768-4898-8c23-fa1d82be63f8",
+						"10f16536-a4cc-4d77-ae00-465fc9b5c051",
+						"ef63ffff-50f6-44e9-8a33-675c6010a0e7",
+						"c423d9c6-65bb-4efc-8dcc-99ae1f849615",
+						"f4e0158e-1f39-4604-b181-49375f82000f",
+						"671c906c-4bab-4996-a899-de42fb5acfa2",
+						"96e0a1cb-cf2d-45bf-ad36-6c889860304c",
+						"f978b895-f0a0-4a73-a9ed-9e06a653c679",
+						"3735dfb7-fc3c-46a3-b167-961d26844791",
+						"fb6b9533-a9d1-41dc-8627-124be6df1b33",
+						"11c8167e-d159-463e-b828-2715888928eb",
+						"d794359b-9537-40ec-9591-f24627766bb4",
+						"5b9eaeb1-eae8-4029-ad55-ccf4beab5f6b",
+						"2694b2ff-224c-4bde-858d-1671a1dbc580",
+						"7e1efe31-5212-4be9-b9e9-0775c44ebde0",
+						"b6a3ae7c-dbd3-45ac-bb47-e413ac5ac232",
+						"c143b485-92af-4994-8bfd-03251a1f3905"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_DEVICE_ICA_CLASSIC_RUBBERDUCK_PROXIMITY_EXPLOSIVE"
+			],
+			"LastModified": "2022-05-24T12:26:03.657754",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "be7c8370-317b-444c-aa70-bb58c125d31d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"2694b2ff-224c-4bde-858d-1671a1dbc580"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "c7bc8ac2-139c-4be6-9ea3-5472e14d5d72",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_GUARD_ACCIDENT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.ActorType",
+											1
+										]
+									},
+									{
+										"$eq": [
+											"$Value.Accident",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											false
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"very-low",
+				"elimination"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.1219671",
+			"Xp": 5,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign",
+					"usercreated",
+					"creation",
+					"featured"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "c7bc8ac2-139c-4be6-9ea3-5472e14d5d72",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "cddd65dc-1017-49d6-91de-e34cb219fa81",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_ELUSIVE_TARGETS_2_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ELUSIVE_TARGETS_2_DESC",
+			"ImageName": "images/challenges/profile_challenges/elusive_targets_6.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 6
+				},
+				"Context": {
+					"Completed": [],
+					"Count": 0
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "$.Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"Completed",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$not": {
+										"$any": {
+											"?": {
+												"$eq": [
+													"$.#",
+													"$ContractId"
+												]
+											},
+											"in": "$.Completed"
+										}
+									}
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						],
+						"ContractStart": {
+							"Condition": {
+								"$not": {
+									"$eq": [
+										"$Value.ContractType",
+										"elusive"
+									]
+								}
+							},
+							"Transition": "Start"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_LEGACY_HERO_BLOODMONEYSUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.2695734",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "cddd65dc-1017-49d6-91de-e34cb219fa81",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Completed": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285",
+					"7c79dcd8-0f0c-41c9-9963-4563a4e2db7f",
+					"332e588b-80a3-4cb0-abc6-dc8de3d89e83",
+					"8043a9b9-8ba6-453d-83f8-aa507c5a1c08",
+					"507b8b04-8b93-4420-84d1-c0c3a5ce56c3",
+					"28aa7003-1917-46e4-bad4-0f43112aae4e"
+				],
+				"Count": 6,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T09:15:36.1934107+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "ce2b58c0-9279-4d1f-af40-413dde35d09d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_OBJECTIVE_COMPLETED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"_SessionRewards": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ObjectiveCompleted": {
+							"Condition": {
+								"$eq": [
+									"$Value.ExcludeFromScoring",
+									false
+								]
+							},
+							"Actions": {
+								"$pushunique": [
+									"_SessionRewards",
+									"$Value.Id"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"mission"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.139745",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"tutorial",
+					"orbis",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "ce2b58c0-9279-4d1f-af40-413dde35d09d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "ce8b2dbb-3730-468e-90c2-faba14c5ed6a",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_SA_ELUSIVE_TARGETS_I_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GLOBAL_SA_ELUSIVE_TARGETS_I_DESC",
+			"ImageName": "images/challenges/profile_challenges/sa_elusive_target_1.jpg",
+			"Definition": {
+				"Context": {
+					"CompletedSA": [],
+					"Count": 0,
+					"Goal": 1,
+					"RecordingDestroyed": true,
+					"Witnesses": [],
+					"Targets": [],
+					"LastAccidentTime": 0
+				},
+				"Scope": "hit",
+				"States": {
+					"Start": {
+						"ContractStart": {
+							"Actions": [
+								{
+									"$reset": "Witnesses"
+								},
+								{
+									"$reset": "Targets"
+								},
+								{
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								}
+							],
+							"Condition": {
+								"$eq": [
+									"$Value.ContractType",
+									"elusive"
+								]
+							},
+							"Transition": "State_ValidContract"
+						}
+					},
+					"State_ValidContract": {
+						"ContractStart": [
+							{
+								"Actions": [
+									{
+										"$reset": "Witnesses"
+									},
+									{
+										"$reset": "Targets"
+									},
+									{
+										"$set": [
+											"RecordingDestroyed",
+											true
+										]
+									}
+								]
+							},
+							{
+								"Condition": {
+									"$not": {
+										"$eq": [
+											"$Value.ContractType",
+											"elusive"
+										]
+									}
+								},
+								"Transition": "Start"
+							}
+						],
+						"AccidentBodyFound": {
+							"$set": [
+								"LastAccidentTime",
+								"$Timestamp"
+							]
+						},
+						"MurderedBodySeen": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsWitnessTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Witnesses",
+										"$Value.Witness"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsWitnessTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$.LastAccidentTime",
+													"$Timestamp"
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Start"
+							}
+						],
+						"ContractEnd": [
+							{
+								"Actions": {
+									"$inc": "Count",
+									"$pushunique": [
+										"CompletedSA",
+										"$ContractId"
+									]
+								},
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												true,
+												"$.RecordingDestroyed"
+											]
+										},
+										{
+											"$all": {
+												"in": "$.Witnesses",
+												"?": {
+													"$any": {
+														"in": "$.Targets",
+														"?": {
+															"$eq": [
+																"$.#",
+																"$.##"
+															]
+														}
+													}
+												}
+											}
+										},
+										{
+											"$not": {
+												"$any": {
+													"?": {
+														"$eq": [
+															"$.#",
+															"$ContractId"
+														]
+													},
+													"in": "$.CompletedSA"
+												}
+											}
+										}
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						],
+						"CrowdNPC_Died": {
+							"Transition": "Start"
+						},
+						"Kill": [
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$Value.KillContext",
+													1
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Start"
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Targets",
+										"$Value.RepositoryId"
+									]
+								}
+							}
+						],
+						"Witnesses": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Spotted": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"SecuritySystemRecorder": [
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										false
+									]
+								},
+								"Condition": {
+									"$eq": [
+										"$Value.event",
+										"spotted"
+									]
+								}
+							},
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								},
+								"Condition": {
+									"$or": [
+										{
+											"$eq": [
+												"$Value.event",
+												"erased"
+											]
+										},
+										{
+											"$eq": [
+												"$Value.event",
+												"destroyed"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"elusive"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_HERO_TERMINUS_SUIT"
+			],
+			"LastModified": "2021-02-23T13:33:34.3302725",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"elusive"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "ce8b2dbb-3730-468e-90c2-faba14c5ed6a",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedSA": [
+					"f11f5299-12d1-4c65-a7d3-d65b22d94285"
+				],
+				"Count": 1,
+				"Goal": 1,
+				"RecordingDestroyed": true,
+				"Witnesses": [],
+				"Targets": [],
+				"LastAccidentTime": 0,
+				"CurrentState": "Success"
+			},
+			"CompletedAt": "2022-08-21T04:59:39.0514395+00:00",
+			"Completed": true
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "d60f3366-c54a-45b0-b76f-2c62968fbb0d",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SASO_TIER_III_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SASO_TIER_III_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_saso_tier_3.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 17,
+					"RequiredChallenges": [
+						"11f14b4d-f86f-4545-ac32-27d95d484729",
+						"00000006-0000-0000-0000-000000000002",
+						"adca040b-61da-4eae-afaa-232f30c187c4",
+						"66a0fca7-59eb-4697-b643-5d0d08b439c3",
+						"08457a95-ab19-4d46-b825-4150f310f217",
+						"c2739bf2-d5f1-486c-8f5a-e766d699e1a0",
+						"7107ff08-2d82-4abd-83e5-57d0e1b919ff",
+						"9696ce8f-f505-4d91-80fe-d4e9d51a5b5b",
+						"99e006bc-7437-4058-ba4c-a38beb6d63f3",
+						"8d43608c-5706-4311-8f71-038e90574b34",
+						"10c23230-bd47-4386-846e-9a2b8e3b51d9",
+						"b7d311d8-c71a-4cfd-a768-7367f9b5e366",
+						"64ec75c2-2c6e-4578-a0d4-d9d31d7cc70c",
+						"507257e0-53b2-4385-9a88-c3a25637f008",
+						"529dbda2-c03e-4702-83be-45ec5c892d04",
+						"dd0b94a4-bc53-44f2-bef6-12de2637c4da",
+						"119553ef-4ea6-4366-8303-49fb3d082eea",
+						"969f8855-6727-4cf4-bfa9-a40e4460f7ae",
+						"5e92a9eb-599f-49cb-9e69-4baaf9d0bdc2",
+						"2d17c8fc-bf8e-4d00-aaf8-2ecd065374f3",
+						"8955135e-6aaf-422f-b6bc-75d298d3acf0",
+						"a23b0f09-a4ae-44a8-be7b-65afb47325f6",
+						"4ada947d-4934-4732-9612-ec5e382e7f34",
+						"5f801945-7315-470d-a602-f7891030fb63",
+						"aadedeb0-3005-4693-ae1d-1d86f2aa06e4",
+						"19ef07a7-65ed-454c-a789-f843f7e12939",
+						"cda55c37-7605-4239-9aad-8c162d0cdaa9",
+						"9aa98c98-2f2b-41c7-9ebe-7550bc90953d",
+						"8752b6fc-f435-4a33-a0f2-277f7f90bd60",
+						"c8cf11a8-d0c6-4dd9-aad4-cf2f36f5bead",
+						"0d02acc0-badc-41d0-a60a-b9376a0949bb",
+						"682fe23c-5d0a-414c-8b88-cb4472856a1b",
+						"6ca5490e-b6c1-420d-b4bd-3469ef253983",
+						"53a17fb0-f6ef-449f-a346-ff0b52c918e7",
+						"246f098c-3e1d-428e-bcf5-5fce86e2a5b8",
+						"cba9f315-1e45-45a1-997a-15ed7743449d",
+						"f84b1f7c-540d-4237-a73b-cde321af6ff3",
+						"425a7a49-1892-4a24-aa40-f46cdb8d6c7f"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"TOKEN_OUTFIT_CLASSICS_REWARD_BLACK_SUIT"
+			],
+			"LastModified": "2022-05-24T12:26:03.6471233",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "d60f3366-c54a-45b0-b76f-2c62968fbb0d",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"53a17fb0-f6ef-449f-a346-ff0b52c918e7"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "d644b9c3-48ee-413e-9ad8-876b334fd511",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_III_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_III_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sniper_tier_3.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 17,
+					"RequiredChallenges": [
+						"990c2b85-e6ed-46e7-913f-7bd0ba54cb92",
+						"98f40445-5350-4669-838c-467c9bb588cb",
+						"0a4678f9-025f-4497-8a30-8efaac9bbca4",
+						"25a17321-b065-4d4e-9a73-6fcc97940dcd",
+						"9e133eb9-ed43-424b-b9e5-2398923efe50",
+						"aa210ee2-bb45-4819-abba-af4094917d92",
+						"78cd6055-0f50-48a3-9c97-4c0dd2b200af",
+						"6dfc70aa-05dd-4ae7-897e-ad4fb303b223",
+						"29acb552-1c22-4995-bbb7-d29e827b26b2",
+						"9ff18ae7-9c5e-45a2-8753-7d40752ab992",
+						"a7eee40e-0fa0-418d-be84-22135176764f",
+						"8a017de7-d90e-4b7a-8b95-ddafaac6c000",
+						"0700c419-2b8d-415c-99be-ddbb1120c55a",
+						"c88429f2-481d-46cc-b479-ffdabe0e0e34",
+						"37faedc3-5ad8-4eba-94ff-484abddb395d",
+						"7fb6e4dc-aabd-4f98-b35d-2f0a839b716f",
+						"ced93d8f-0000-0000-0000-000000000003",
+						"17fdac23-9554-4714-9853-bc8c0ff905fc",
+						"b6caebc2-0768-4898-8c23-fa1d82be63f8",
+						"10f16536-a4cc-4d77-ae00-465fc9b5c051",
+						"ef63ffff-50f6-44e9-8a33-675c6010a0e7",
+						"c423d9c6-65bb-4efc-8dcc-99ae1f849615",
+						"f4e0158e-1f39-4604-b181-49375f82000f",
+						"671c906c-4bab-4996-a899-de42fb5acfa2",
+						"96e0a1cb-cf2d-45bf-ad36-6c889860304c",
+						"f978b895-f0a0-4a73-a9ed-9e06a653c679",
+						"3735dfb7-fc3c-46a3-b167-961d26844791",
+						"fb6b9533-a9d1-41dc-8627-124be6df1b33",
+						"11c8167e-d159-463e-b828-2715888928eb",
+						"d794359b-9537-40ec-9591-f24627766bb4",
+						"5b9eaeb1-eae8-4029-ad55-ccf4beab5f6b",
+						"2694b2ff-224c-4bde-858d-1671a1dbc580",
+						"7e1efe31-5212-4be9-b9e9-0775c44ebde0",
+						"b6a3ae7c-dbd3-45ac-bb47-e413ac5ac232",
+						"c143b485-92af-4994-8bfd-03251a1f3905"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"FIREARMS_SNIPER_HEAVY_ICA_WOODSMAN_COVERT"
+			],
+			"LastModified": "2022-05-24T12:26:03.67949",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "d644b9c3-48ee-413e-9ad8-876b334fd511",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"2694b2ff-224c-4bde-858d-1671a1dbc580"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "db3d7f99-efaa-4f3c-91af-26b4e9c5dac6",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_KEYCARD_OBTAINED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$Value.ActionRewardType",
+									"AR_Keycard"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8772007",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "db3d7f99-efaa-4f3c-91af-26b4e9c5dac6",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "e2b09f8e-38de-41d7-8f26-815bfd3faa65",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_II_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_CLASSIC_SNIPER_TIER_II_DESC",
+			"ImageName": "images/challenges/profile_challenges/classics_sniper_tier_2.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 12,
+					"RequiredChallenges": [
+						"990c2b85-e6ed-46e7-913f-7bd0ba54cb92",
+						"98f40445-5350-4669-838c-467c9bb588cb",
+						"0a4678f9-025f-4497-8a30-8efaac9bbca4",
+						"25a17321-b065-4d4e-9a73-6fcc97940dcd",
+						"9e133eb9-ed43-424b-b9e5-2398923efe50",
+						"aa210ee2-bb45-4819-abba-af4094917d92",
+						"78cd6055-0f50-48a3-9c97-4c0dd2b200af",
+						"6dfc70aa-05dd-4ae7-897e-ad4fb303b223",
+						"29acb552-1c22-4995-bbb7-d29e827b26b2",
+						"9ff18ae7-9c5e-45a2-8753-7d40752ab992",
+						"a7eee40e-0fa0-418d-be84-22135176764f",
+						"8a017de7-d90e-4b7a-8b95-ddafaac6c000",
+						"0700c419-2b8d-415c-99be-ddbb1120c55a",
+						"c88429f2-481d-46cc-b479-ffdabe0e0e34",
+						"37faedc3-5ad8-4eba-94ff-484abddb395d",
+						"7fb6e4dc-aabd-4f98-b35d-2f0a839b716f",
+						"ced93d8f-0000-0000-0000-000000000003",
+						"17fdac23-9554-4714-9853-bc8c0ff905fc",
+						"b6caebc2-0768-4898-8c23-fa1d82be63f8",
+						"10f16536-a4cc-4d77-ae00-465fc9b5c051",
+						"ef63ffff-50f6-44e9-8a33-675c6010a0e7",
+						"c423d9c6-65bb-4efc-8dcc-99ae1f849615",
+						"f4e0158e-1f39-4604-b181-49375f82000f",
+						"671c906c-4bab-4996-a899-de42fb5acfa2",
+						"96e0a1cb-cf2d-45bf-ad36-6c889860304c",
+						"f978b895-f0a0-4a73-a9ed-9e06a653c679",
+						"3735dfb7-fc3c-46a3-b167-961d26844791",
+						"fb6b9533-a9d1-41dc-8627-124be6df1b33",
+						"11c8167e-d159-463e-b828-2715888928eb",
+						"d794359b-9537-40ec-9591-f24627766bb4",
+						"5b9eaeb1-eae8-4029-ad55-ccf4beab5f6b",
+						"2694b2ff-224c-4bde-858d-1671a1dbc580",
+						"7e1efe31-5212-4be9-b9e9-0775c44ebde0",
+						"b6a3ae7c-dbd3-45ac-bb47-e413ac5ac232",
+						"c143b485-92af-4994-8bfd-03251a1f3905"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"Count": {
+						"count": "($.CompletedChallenges).Count",
+						"total": "$.Goal",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value.ChallengeId"
+											]
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"CompletedChallenges",
+										"$Value.ChallengeId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$ge": [
+										"($.CompletedChallenges).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"classic"
+			],
+			"Drops": [
+				"PROP_CONTAINER_SUITCASE_ICA_CLASSIC"
+			],
+			"LastModified": "2022-05-24T12:26:03.6687789",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"escalation",
+					"elusive",
+					"featured",
+					"tutorial"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "e2b09f8e-38de-41d7-8f26-815bfd3faa65",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"2694b2ff-224c-4bde-858d-1671a1dbc580"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "e5507a4d-dae1-4380-b042-9a76f01ec71b",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_FRISK_SUCCESS_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {
+					"FriskZone": []
+				},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"BeingFrisked": {
+							"Condition": {
+								"$pushunique": [
+									"FriskZone",
+									"$Value.RoomId"
+								]
+							},
+							"Transition": "WaitForSuccess"
+						}
+					},
+					"WaitForSuccess": {
+						"FriskedSuccess": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"low",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.8023122",
+			"Xp": 10,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "e5507a4d-dae1-4380-b042-9a76f01ec71b",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "f645022b-70c9-4e5f-984b-1de3a81fe075",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_DOOR_UNLOCKED_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Door_Unlocked": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"intermediate",
+				"infiltration"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:03.9144947",
+			"Xp": 25,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "f645022b-70c9-4e5f-984b-1de3a81fe075",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "f929efad-5d5e-4fcb-9c4e-6eb61a01412c",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_NON_TARGET_KILL_NAME",
+			"Type": "Statistic",
+			"Description": "UI_CHALLENGES_GLOBAL_NON_TARGET_KILL_DESC",
+			"ImageName": null,
+			"Definition": {
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"CrowdNPC_Died": {
+							"Transition": "Success"
+						},
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											false
+										]
+									},
+									{
+										"$not": {
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"stats",
+				"hideinhud",
+				"shownotification"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:29.1157565",
+			"Xp": 0,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"vsrace"
+				],
+				"Locations": null,
+				"GameModes": null
+			}
+		},
+		"Progression": {
+			"ChallengeId": "f929efad-5d5e-4fcb-9c4e-6eb61a01412c",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CurrentState": "Start",
+				"_SysVars": {
+					"Repeatable": {
+						"SuccessCount": 0,
+						"CompletionCount": 6
+					}
+				}
+			},
+			"CompletedAt": "2022-06-24T17:13:09.5341442+00:00",
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "fdcd5a63-f0b4-441e-bc3d-f4f02f4f95d3",
+			"GroupId": "00000000-0000-0000-0000-000000000000",
+			"Name": "UI_CHALLENGES_GLOBAL_CROWDCHOICE_ACCIDENT_NAME",
+			"Type": "Hit",
+			"Description": "",
+			"ImageName": null,
+			"Definition": {
+				"ResetOnCycleCompletion": false,
+				"Context": {},
+				"Repeatable": {
+					"Base": 1,
+					"Delta": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"PollResult_Accident": {
+							"Transition": "Active"
+						}
+					},
+					"Active": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.Accident",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"actionreward",
+				"high",
+				"crowdchoice"
+			],
+			"Drops": [],
+			"LastModified": "2022-05-24T12:26:04.4486369",
+			"Xp": 100,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null,
+			"InclusionData": {
+				"ContractIds": null,
+				"ContractTypes": [
+					"mission",
+					"flashback",
+					"elusive",
+					"arcade",
+					"escalation",
+					"usercreated",
+					"tutorial",
+					"creation",
+					"orbis",
+					"featured",
+					"campaign",
+					"placeholder"
+				],
+				"Locations": null,
+				"GameModes": null
+			},
+			"CrowdChoice": {
+				"Tag": "Accident"
+			}
+		},
+		"Progression": {
+			"ChallengeId": "fdcd5a63-f0b4-441e-bc3d-f4f02f4f95d3",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "0d160e0a-99ad-4ec3-9865-30d8da8076df",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_AREA_DISCOVERED_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_AREA_DISCOVERED_DESC",
+			"ImageName": "images/challenges/Golden/Golden_Area_Discovered_Gecko.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 33
+				},
+				"Context": {
+					"AreaIDs": []
+				},
+				"ContextListeners": {
+					"AreaIDs": {
+						"type": "challengecounter",
+						"count": "($.AreaIDs).Count",
+						"total": "$.Goal",
+						"text": "UI_CHALLENGES_GOLDEN_AREA_DISCOVERED_NAME"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"AreaDiscovered": [
+							{
+								"Actions": {
+									"$pushunique": [
+										"AreaIDs",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"($.AreaIDs).Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5600505",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "0d160e0a-99ad-4ec3-9865-30d8da8076df",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"AreaIDs": [],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "10aea755-8148-4a45-a04f-c9f87cd7b0b5",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_WINDOWSHUTTER_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_WINDOWSHUTTER_DESC",
+			"ImageName": "images/challenges/Golden/Golden_windowshutter.jpg",
+			"Definition": {
+				"Constants": {
+					"Goal": 6
+				},
+				"Context": {
+					"Count": 0,
+					"WindowShutter_Event_01": false,
+					"WindowShutter_Event_02": false,
+					"WindowShutter_Event_03": false,
+					"WindowShutter_Event_04": false,
+					"WindowShutter_Event_05": false,
+					"WindowShutter_Event_06": false
+				},
+				"ContextListeners": {
+					"Count": {
+						"type": "challengecounter",
+						"count": "$.Count",
+						"total": "$.Goal"
+					}
+				},
+				"Scope": "Hit",
+				"States": {
+					"Start": {
+						"WindowShutter_Event_01": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_01",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_01",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						],
+						"WindowShutter_Event_02": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_02",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_02",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						],
+						"WindowShutter_Event_03": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_03",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_03",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						],
+						"WindowShutter_Event_04": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_04",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_04",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						],
+						"WindowShutter_Event_05": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_05",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_05",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						],
+						"WindowShutter_Event_06": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.WindowShutter_Event_06",
+										false
+									]
+								},
+								"Actions": [
+									{
+										"$inc": "Count"
+									},
+									{
+										"$set": [
+											"WindowShutter_Event_06",
+											true
+										]
+									}
+								],
+								"Transition": "CheckCount"
+							}
+						]
+					},
+					"CheckCount": {
+						"-": [
+							{
+								"Condition": {
+									"$eq": [
+										"$.Count",
+										"$.Goal"
+									]
+								},
+								"Transition": "Success"
+							},
+							{
+								"Transition": "Start"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6749011",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "10aea755-8148-4a45-a04f-c9f87cd7b0b5",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"Count": 0,
+				"WindowShutter_Event_01": false,
+				"WindowShutter_Event_02": false,
+				"WindowShutter_Event_03": false,
+				"WindowShutter_Event_04": false,
+				"WindowShutter_Event_05": false,
+				"WindowShutter_Event_06": false,
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "12707489-b886-4d73-ba44-cbe4630c87f0",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_FIBER_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_FIBER_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_fiberwire.jpg",
+			"Definition": {
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillItemCategory",
+											"fiberwire"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6085543",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "12707489-b886-4d73-ba44-cbe4630c87f0",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "19937e00-0633-4ca2-9b10-abc9f8c31929",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_MASTER_ASSASSIN_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_MASTER_ASSASSIN_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_versatile.jpg",
+			"Definition": {
+				"Constants": {
+					"RequiredChallenges": [
+						"d65b6412-e2e2-4f2c-8a68-b6ff8423574e",
+						"5779a9e0-7ce5-4a12-980c-18a72409694b",
+						"e4b787b9-80ca-4864-957e-e432cbf9b133",
+						"c6b5a25c-adf8-468e-a282-93135a2bcbbe",
+						"12707489-b886-4d73-ba44-cbe4630c87f0"
+					]
+				},
+				"Context": {
+					"CompletedChallenges": []
+				},
+				"ContextListeners": {
+					"CompletedChallenges": {
+						"comparand": "$.RequiredChallenges",
+						"type": "challengetree"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"ChallengeCompleted": [
+							{
+								"$pushunique": [
+									"CompletedChallenges",
+									"$Value.ChallengeId"
+								]
+							},
+							{
+								"Condition": {
+									"$all": {
+										"?": {
+											"$any": {
+												"?": {
+													"$eq": [
+														"$.#",
+														"$.##"
+													]
+												},
+												"in": "$.CompletedChallenges"
+											}
+										},
+										"in": "$.RequiredChallenges"
+									}
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"hard",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6136882",
+			"Xp": 4000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "19937e00-0633-4ca2-9b10-abc9f8c31929",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"CompletedChallenges": [
+					"19af817d-a942-417e-978e-8864b39e8556",
+					"df97f0ef-e91e-42b2-84ac-9d5f477ea50e",
+					"25221ea4-3e99-4c1e-9cdd-dd02c2063248",
+					"3a479ece-ebb2-4327-9d9b-b83291874794",
+					"6d09a88f-da32-4368-b8be-d4ab0c66152f",
+					"a84c010f-c7dd-452e-99b3-51c25ada3cab",
+					"b1a85feb-55af-4707-8271-b3522661c0b1",
+					"2694b2ff-224c-4bde-858d-1671a1dbc580",
+					"40ba6b62-de82-4b94-ace9-c34917b36cc9",
+					"53a17fb0-f6ef-449f-a346-ff0b52c918e7",
+					"b729d1b0-d5f1-4b9a-a922-d25e4c20b8aa"
+				],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "292b0a5d-897b-4f6e-b4f8-7160cc98aa81",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_BECOME_PILOT_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_BECOME_PILOT_DESC",
+			"ImageName": "images/challenges/Golden/Golden_become_pilot.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "ea5b1cea-c305-4f60-9512-78b2e6cd5030"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Disguise": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.7034815",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "292b0a5d-897b-4f6e-b4f8-7160cc98aa81",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "319d9198-336b-4739-b218-7794f4433f06",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_LADDER_C_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_LADDER_C_DESC",
+			"ImageName": "images/challenges/Golden/Golden_ladder_c.jpg",
+			"Definition": {
+				"Context": {},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Gecko_Ladder_C_Down": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery",
+				"shortcut"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5734366",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "319d9198-336b-4739-b218-7794f4433f06",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "3b579c45-4261-4b21-92f9-20b2e974aa5f",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_BECOME_ASSASSIN_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_BECOME_ASSASSIN_DESC",
+			"ImageName": "images/challenges/Golden/Golden_become_assassin.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "ef9dddc5-25c7-450f-afcb-ac1b8f9569c9"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Disguise": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6808796",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "3b579c45-4261-4b21-92f9-20b2e974aa5f",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "400f3160-e140-4e62-95f7-246eac3a29ae",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_GET_KEY_HELICOPTER_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_GET_KEY_HELICOPTER_DESC",
+			"ImageName": "images/challenges/Golden/Golden_get_key_helicopter.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "5d2ffdf1-9722-459c-9163-6b9ee3dc250f"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6468668",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "400f3160-e140-4e62-95f7-246eac3a29ae",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "4a3120cc-403c-41a7-807c-767f8cfb80af",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_LADDER_B_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_LADDER_B_DESC",
+			"ImageName": "images/challenges/Golden/Golden_ladder_b.jpg",
+			"Definition": {
+				"Context": {},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Gecko_Ladder_B_Down": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery",
+				"shortcut"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5692687",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "4a3120cc-403c-41a7-807c-767f8cfb80af",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "5287dbe0-e7f7-494c-8933-37914429e3c5",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_BECOME_GUARD_PENTHOUSE_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_BECOME_GUARD_PENTHOUSE_DESC",
+			"ImageName": "images/challenges/Golden/Golden_become_guard_penthouse.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "f0a52fef-608a-4fa8-9fd6-bd5c15506188"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Disguise": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6861213",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "5287dbe0-e7f7-494c-8933-37914429e3c5",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "576073f5-b0e6-42a6-afa8-370ba8048804",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_BECOME_CHEF_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_BECOME_CHEF_DESC",
+			"ImageName": "images/challenges/Golden/Golden_become_chef.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "6dcf16f6-6620-410f-b51c-179f75de938c"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Disguise": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6915349",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "576073f5-b0e6-42a6-afa8-370ba8048804",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "5779a9e0-7ce5-4a12-980c-18a72409694b",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_POISON_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_POISON_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_poison.jpg",
+			"Definition": {
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillClass",
+											"poison"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5928327",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "5779a9e0-7ce5-4a12-980c-18a72409694b",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "59e15298-993a-4675-ac8f-1b12192cbb52",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_GET_SCIMITAR_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_GET_SCIMITAR_DESC",
+			"ImageName": "images/challenges/Golden/Golden_get_scimitar.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "b4d4ed1a-0687-48a9-a731-0e3b99494eb6"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6631467",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "59e15298-993a-4675-ac8f-1b12192cbb52",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "6a6d7281-d7b9-4723-a575-17048e7360c1",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_BECOME_EVENTSTAFF_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_BECOME_EVENTSTAFF_DESC",
+			"ImageName": "images/challenges/Golden/Golden_become_eventstaff.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "77fb4c80-0b81-4672-be65-12c16c3ac7ac"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Disguise": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6973879",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "6a6d7281-d7b9-4723-a575-17048e7360c1",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "6c537401-4577-4b5e-b1f9-a0b3cbb645f6",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_DOOR_A_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_DOOR_A_DESC",
+			"ImageName": "images/challenges/Golden/Golden_door_a.jpg",
+			"Definition": {
+				"Context": {},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Gecko_Door_A_Open": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery",
+				"shortcut"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5777154",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "6c537401-4577-4b5e-b1f9-a0b3cbb645f6",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "7a745d38-e759-4b4d-973c-eebb0992cbb0",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_EXIT_PARACHUTE_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_EXIT_PARACHUTE_DESC",
+			"ImageName": "images/challenges/Golden/Golden_exit_parachute.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "fc58abee-40e9-41b0-bf17-3b6caecfe5d9"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"exit_gate": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6413175",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "7a745d38-e759-4b4d-973c-eebb0992cbb0",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "962eb75c-3e2e-4d69-9d2a-1bf3d1e044b5",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_PENTHOUSE_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_PENTHOUSE_DESC",
+			"ImageName": "images/challenges/Golden/Golden_exit_elevator_penthouse.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "f00ad962-fd05-4a79-883e-f7326a249783"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"exit_gate": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6301711",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "962eb75c-3e2e-4d69-9d2a-1bf3d1e044b5",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "970b9ee9-760b-4479-9533-9516968f0e06",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_GET_SKYSCRAPER_MODEL_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_GET_SKYSCRAPER_MODEL_DESC",
+			"ImageName": "images/challenges/Golden/Golden_get_skyscraper_model.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "706cb615-e66d-49f3-86bb-899fa7117bcf"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.668635",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "970b9ee9-760b-4479-9533-9516968f0e06",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "a6a5a962-8e92-42a7-bd44-824610d7399f",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_LADDER_A_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_LADDER_A_DESC",
+			"ImageName": "images/challenges/Golden/Golden_ladder_a.jpg",
+			"Definition": {
+				"Context": {},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Gecko_Ladder_A_Down": {
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery",
+				"shortcut"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5650563",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "a6a5a962-8e92-42a7-bd44-824610d7399f",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "c02d4be1-8ec6-4201-bbc6-a8656009ac16",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_ATRIUM_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_ATRIUM_DESC",
+			"ImageName": "images/challenges/Golden/Golden_exit_elevator_atrium.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "07a71270-12ce-43a6-bd89-ff46cd196c6b"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"exit_gate": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6195239",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "c02d4be1-8ec6-4201-bbc6-a8656009ac16",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "c4180ec8-5122-4e8f-8437-137c76094a41",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_GET_KEY_PENTHOUSE_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_GET_KEY_PENTHOUSE_DESC",
+			"ImageName": "images/challenges/Golden/Golden_get_key_penthouse.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "3e176a59-7be7-4b10-a62b-41b4206d0b19"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6523672",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "c4180ec8-5122-4e8f-8437-137c76094a41",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "c6b5a25c-adf8-468e-a282-93135a2bcbbe",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_DROWN_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_DROWN_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_drown.jpg",
+			"Definition": {
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.KillMethodStrict",
+											"accident_drown"
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6035045",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "c6b5a25c-adf8-468e-a282-93135a2bcbbe",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "d65b6412-e2e2-4f2c-8a68-b6ff8423574e",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_HEADSHOT_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_HEADSHOT_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_headshot.jpg",
+			"Definition": {
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.IsHeadshot",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5877217",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "d65b6412-e2e2-4f2c-8a68-b6ff8423574e",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "e4b787b9-80ca-4864-957e-e432cbf9b133",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_ACCIDENT_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_47_ASSASINATION_ACCIDENT_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_accident.jpg",
+			"Definition": {
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											"$Value.IsTarget",
+											true
+										]
+									},
+									{
+										"$eq": [
+											"$Value.Accident",
+											true
+										]
+									}
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"assassination"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.5981739",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "e4b787b9-80ca-4864-957e-e432cbf9b133",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "edad7fec-e3d1-46a2-9104-5b6a4abd7834",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_STAFF_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_EXIT_ELEVATOR_STAFF_DESC",
+			"ImageName": "images/challenges/Golden/Golden_exit_elevator_staff.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "32655e96-b404-4377-b6b5-923f33375c4a"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"exit_gate": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6248245",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "edad7fec-e3d1-46a2-9104-5b6a4abd7834",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "f99eb849-9397-41a7-bce3-6d2c8843cd75",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_EXIT_HELICOPTER_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_EXIT_HELICOPTER_DESC",
+			"ImageName": "images/challenges/Golden/Golden_exit_helicopter.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "d3a63aaa-482a-4110-a430-366f096a8373"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"exit_gate": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6358949",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "f99eb849-9397-41a7-bce3-6d2c8843cd75",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "fb7a5bad-5478-46c0-ac6a-1810ad06ba37",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_GET_KEYCARD_EVACUATION_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_GET_KEYCARD_EVACUATION_DESC",
+			"ImageName": "images/challenges/Golden/Golden_get_keycard_penthouse.jpg",
+			"Definition": {
+				"Constants": {
+					"Target": "091b69e6-be1f-461d-918c-a9ab554cfcca"
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ItemPickedUp": {
+							"Condition": {
+								"$eq": [
+									"$.Target",
+									"$Value.RepositoryId"
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"easy",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.6578021",
+			"Xp": 1000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "fb7a5bad-5478-46c0-ac6a-1810ad06ba37",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "fb827e24-c525-46b1-a9ef-fb4b503d073f",
+			"GroupId": "d62d4b44-1ad3-4cbb-891c-5256e628a3e9",
+			"Name": "UI_CHALLENGES_GOLDEN_MASTER_OF_DISGUISE_NAME",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_GOLDEN_MASTER_OF_DISGUISE_DESC",
+			"ImageName": "images/challenges/profile_challenges/generic_location_47_chameleon.jpg",
+			"Definition": {
+				"Constants": {
+					"EligibleDisguises": [
+						"ef9dddc5-25c7-450f-afcb-ac1b8f9569c9",
+						"6dcf16f6-6620-410f-b51c-179f75de938c",
+						"f0a52fef-608a-4fa8-9fd6-bd5c15506188",
+						"77fb4c80-0b81-4672-be65-12c16c3ac7ac",
+						"ea5b1cea-c305-4f60-9512-78b2e6cd5030",
+						"a745ca17-3a7e-4c15-8219-6a5d6245ac7f",
+						"eb12cc2b-6dcf-4831-ba4e-ef8e53180e2f",
+						"e65f04b2-47a6-4d3d-b36c-9fb7fa08a00b",
+						"eb15e523-713f-41ba-ad67-d33b02de43c6",
+						"2c649c52-f85a-4b29-838a-31c2525cc862",
+						"bdbd806d-eb11-4167-bd2d-f5f015c3fe86"
+					]
+				},
+				"Context": {
+					"DisguiseEquipped": []
+				},
+				"ContextListeners": {
+					"DisguiseEquipped": {
+						"count": "($.DisguiseEquipped).Count",
+						"total": "($.EligibleDisguises).Count",
+						"type": "challengecounter"
+					}
+				},
+				"Scope": "profile",
+				"States": {
+					"Start": {
+						"Disguise": [
+							{
+								"Condition": {
+									"$any": {
+										"?": {
+											"$eq": [
+												"$.#",
+												"$Value"
+											]
+										},
+										"in": "$.EligibleDisguises"
+									}
+								},
+								"Actions": {
+									"$pushunique": [
+										"DisguiseEquipped",
+										"$Value"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$all": {
+										"?": {
+											"$any": {
+												"?": {
+													"$eq": [
+														"$.#",
+														"$.##"
+													]
+												},
+												"in": "$.DisguiseEquipped"
+											}
+										},
+										"in": "$.EligibleDisguises"
+									}
+								},
+								"Transition": "Success"
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"hard",
+				"discovery"
+			],
+			"Drops": [],
+			"LastModified": "2021-01-06T23:00:36.582741",
+			"Xp": 4000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "fb827e24-c525-46b1-a9ef-fb4b503d073f",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {
+				"DisguiseEquipped": [],
+				"CurrentState": "Start"
+			},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "05efca7c-7184-4792-8d40-fb1d0912ab68",
+			"GroupId": "b2c0251e-1803-4e12-b860-b9fa6ce5c004",
+			"Name": "UI_CHALLENGES_ET_GIBSON_SILENT_ASSASSIN_TITLE",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ET_GIBSON_SILENT_ASSASSIN_DESC",
+			"ImageName": "images/challenges/elusive_target/et_gibson_silentassassin.jpg",
+			"Definition": {
+				"Context": {
+					"Witnesses": [],
+					"KilledTargets": [],
+					"RecordingDestroyed": true,
+					"LastAccidentTime": 0
+				},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"ContractEnd": {
+							"Condition": {
+								"$and": [
+									{
+										"$eq": [
+											true,
+											"$.RecordingDestroyed"
+										]
+									},
+									{
+										"$all": {
+											"in": "$.Witnesses",
+											"?": {
+												"$any": {
+													"in": "$.KilledTargets",
+													"?": {
+														"$eq": [
+															"$.#",
+															"$.##"
+														]
+													}
+												}
+											}
+										}
+									}
+								]
+							},
+							"Transition": "Success"
+						},
+						"AccidentBodyFound": {
+							"$set": [
+								"LastAccidentTime",
+								"$Timestamp"
+							]
+						},
+						"Witnesses": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Spotted": {
+							"Condition": {
+								"$any": {
+									"in": "$Value",
+									"?": {
+										"$pushunique": [
+											"Witnesses",
+											"$.#"
+										]
+									}
+								}
+							}
+						},
+						"Kill": [
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$Value.KillContext",
+													1
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsTarget",
+												false
+											]
+										},
+										{
+											"$eq": [
+												"$Value.KillContext",
+												1
+											]
+										}
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"KilledTargets",
+										"$Value.RepositoryId"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"KilledTargets",
+										"$Value.RepositoryId"
+									]
+								}
+							}
+						],
+						"CrowdNPC_Died": {
+							"Transition": "Failure"
+						},
+						"MurderedBodySeen": [
+							{
+								"Condition": {
+									"$eq": [
+										"$Value.IsWitnessTarget",
+										true
+									]
+								},
+								"Actions": {
+									"$pushunique": [
+										"Witnesses",
+										"$Value.Witness"
+									]
+								}
+							},
+							{
+								"Condition": {
+									"$and": [
+										{
+											"$eq": [
+												"$Value.IsWitnessTarget",
+												false
+											]
+										},
+										{
+											"$not": {
+												"$eq": [
+													"$.LastAccidentTime",
+													"$Timestamp"
+												]
+											}
+										}
+									]
+								},
+								"Transition": "Failure"
+							}
+						],
+						"SecuritySystemRecorder": [
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										false
+									]
+								},
+								"Condition": {
+									"$eq": [
+										"$Value.event",
+										"spotted"
+									]
+								}
+							},
+							{
+								"Actions": {
+									"$set": [
+										"RecordingDestroyed",
+										true
+									]
+								},
+								"Condition": {
+									"$or": [
+										{
+											"$eq": [
+												"$Value.event",
+												"erased"
+											]
+										},
+										{
+											"$eq": [
+												"$Value.event",
+												"destroyed"
+											]
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"hard",
+				"elusive"
+			],
+			"Drops": [],
+			"LastModified": "2021-09-28T12:54:22.3879865",
+			"Xp": 4000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "05efca7c-7184-4792-8d40-fb1d0912ab68",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	},
+	{
+		"Challenge": {
+			"Id": "3beb74aa-45f7-4b70-bbf0-75045f6c525a",
+			"GroupId": "b2c0251e-1803-4e12-b860-b9fa6ce5c004",
+			"Name": "UI_CHALLENGES_ET_GIBSON_TARGETDOWN_TITLE",
+			"Type": "Hit",
+			"Description": "UI_CHALLENGES_ET_GIBSON_TARGETDOWN_DESC",
+			"ImageName": "images/challenges/elusive_target/et_gibson_targetdown.jpg",
+			"Definition": {
+				"Context": {},
+				"Scope": "session",
+				"States": {
+					"Start": {
+						"Kill": {
+							"Condition": {
+								"$eq": [
+									"$Value.IsTarget",
+									true
+								]
+							},
+							"Transition": "Success"
+						}
+					}
+				}
+			},
+			"Tags": [
+				"story",
+				"medium",
+				"elusive"
+			],
+			"Drops": [],
+			"LastModified": "2021-09-28T12:54:22.4036209",
+			"Xp": 2000,
+			"XpModifier": {},
+			"PlayableSince": null,
+			"PlayableUntil": null
+		},
+		"Progression": {
+			"ChallengeId": "3beb74aa-45f7-4b70-bbf0-75045f6c525a",
+			"ProfileId": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+			"State": {},
+			"CompletedAt": null,
+			"Completed": false
+		}
+	}
+]
