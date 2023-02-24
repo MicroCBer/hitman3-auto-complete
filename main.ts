@@ -1,10 +1,11 @@
 import fetch from "node-fetch"
-import { GetForPlay2Response, Objective } from './GetForPlay2Response';
+import { GetForPlay2Response, Objective } from './types/GetForPlay2Response';
 import { v4 as uuidv4 } from 'uuid';
-import { targetList } from './AmbroseIslandTargetList';
+import { targetList } from './types/AmbroseIslandTargetList';
 import asyncPool from "tiny-async-pool"
 import { promises as fs } from "fs"
-import { ChallengeServiceResponse, PurpleKill } from './ChallengeServiceResponse';
+import { ChallengeServiceResponse, PurpleKill } from './types/ChallengeServiceResponse';
+import { TOKEN } from "./token";
 
 const SESSION_ID = "76561199133083900-573176600"
 
@@ -18,21 +19,26 @@ interface FakeCompleteConfig {
     silent?: boolean,
     doorUnlockEventNum?: number,
     challenges?: string[] | (() => any)[],
-    contractType?: "elusive" | "usercreate",
+    contractType?: "elusive" | "usercreate" | "evergreen",
     oauthToken: string,
-    forceGetforplay?: boolean
+    forceGetforplay?: boolean,
+    evergreen?: boolean
 }
 
-async function fake_complete(contractid, config: FakeCompleteConfig) {
+export async function fake_complete(contractid, config: FakeCompleteConfig) {
     let get4play2: GetForPlay2Response = await (await fetch("https://hm3-service.hitman.io/authentication/api/userchannel/ContractsService/GetForPlay2",
-        { method: "POST", headers: { Authorization: config.oauthToken }, body: JSON.stringify({ "id": contractid, "locationId": "LOCATION_COLORADO", "extraGameChangerIds": [], "difficultyLevel": 2.000000 }) }
+        {
+            method: "POST", headers: { Authorization: config.oauthToken }, body: JSON.stringify({
+                "id": contractid, "locationId": "LOCATION_SNUG_ROCKY_DUGONG_POKER", "extraGameChangerIds": [], "difficultyLevel": 2.000000
+            })
+        }
     )
     ).json() as any;
 
-    function parseJwt(token) {
-        return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString());
+    function getUserID(token) {
+        return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
     }
-    let userID = parseJwt(config.oauthToken).sub
+    let userID = getUserID(config.oauthToken)
 
     if (!get4play2.ContractSessionId && config.forceGetforplay) throw Error("Get for play 2 failed!")
 
@@ -109,7 +115,7 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
                                 }
                             ],
                             "Disguise": "00000000-0000-0000-0000-000000000000",
-                            "LocationId": "LOCATION_COLORADO",
+                            "LocationId": "LOCATION_SNUG_ROCKY_DUGONG_POKER",
                             "GameChangers": [],
                             "ContractType": config.contractType || "usercreate",
                             "DifficultyLevel": 2.000000,
@@ -133,6 +139,20 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         })).json()
 
     let killEvents: any[] = [];
+
+    function makeEvents(particalEvents) {
+        if (!(particalEvents instanceof Array)) particalEvents = [particalEvents];
+
+        return particalEvents.map(v => ({
+            "ContractSessionId": sessionid,
+            "ContractId": contractid,
+            "SessionId": SESSION_ID,
+            "Origin": "gameclient",
+            "Id": uuidv4(),
+            "UserId": userID,
+            ...v
+        }))
+    }
 
     function addKillEvent(repoid: string) {
         killEvents.push({
@@ -217,6 +237,28 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         )
     }
 
+    function addSyndicateTargetEvent(repoid: string) {
+        killEvents.push(...makeEvents([
+            {
+                "Timestamp": 0.199999,
+                "Name": "AddSyndicateTarget",
+                "Value": {
+                    "repoID": repoid
+                },
+                "Origin": "gameclient",
+            },
+            {
+                "Name": "TargetPickedConfirm",
+                "Value": {
+                    "RepositoryId": repoid
+                },
+                "XboxGameMode": 2.000000,
+                "XboxDifficulty": 0.000000,
+                "Origin": "gameclient",
+            },
+        ]))
+    }
+
     function addPickTargetEvent(repoid: string) {
         killEvents.push({
             "Timestamp": 97.324448,
@@ -235,6 +277,34 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         })
     }
 
+
+    if (config.challenges) {
+        for (let challenge of config.challenges) {
+            if (typeof challenge === "string") addOpportunityEvent(challenge)
+            else {
+                const result = challenge();
+                const challenges: any[] = [];
+                if (!(result instanceof Array)) {
+                    challenges.push(result)
+                } else {
+                    challenges.push(...result)
+                }
+
+                killEvents.push(...challenges.map(v => ({
+                    "ContractSessionId": sessionid,
+                    "ContractId": contractid,
+                    "SessionId": SESSION_ID,
+                    "Origin": "gameclient",
+                    "Id": uuidv4(),
+                    "UserId": userID,
+                    ...v
+                })));
+
+
+            }
+        }
+    }
+
     if (!config.targetList)
         for (let objective of get4play2.Contract.Data.Objectives) {
             if (objective.Definition.Scope === "Hit") {
@@ -244,7 +314,10 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         }
     else
         for (let objective of config.targetList) {
-            if (config.pickup) addPickTargetEvent(objective)
+            if (config.pickup) {
+                if (config.evergreen) addSyndicateTargetEvent(objective)
+                else addPickTargetEvent(objective)
+            }
             addKillEvent(objective)
         }
 
@@ -252,29 +325,12 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         for (let n = 0; n < config.doorUnlockEventNum; n++)addDoorUnlocked()
     }
 
-    if (config.challenges) {
-        for (let challenge of config.challenges) {
-            if (typeof challenge === "string") addOpportunityEvent(challenge)
-            else {
-                killEvents.push({
-                    "ContractSessionId": sessionid,
-                    "ContractId": contractid,
-                    "SessionId": SESSION_ID,
-                    "Origin": "gameclient",
-                    "Id": uuidv4(),
-                    "UserId": userID,
-                    ...challenge()
-                })
-
-            }
-        }
-    }
-
     if (!config.complete) killEvents.pop();
 
     if (!config.silent)
         console.log(`Uploading kill events(${killEvents.length})`)
 
+    console.log(killEvents)
 
     if (config.uploadIn1Req)
         await (await fetch("https://hm3-service.hitman.io/authentication/api/userchannel/EventsService/SaveEvents2",
@@ -321,7 +377,7 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         }
     }
 
-    let last: any = {
+    let lastEvents: any = [{
         "Name": "ContractFailed",
         "ContractSessionId": sessionid,
         "ContractId": contractid,
@@ -333,10 +389,10 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         "SessionId": SESSION_ID,
         "Origin": "gameclient",
         "Id": uuidv4()
-    };
+    }];
 
     if (config.complete) {
-        last = {
+        lastEvents = [{
             "Name": "ContractEnd",
             "ContractSessionId": sessionid,
             "ContractId": contractid,
@@ -351,8 +407,24 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
             "SessionId": SESSION_ID,
             "Origin": "gameclient",
             "Id": uuidv4()
-        }
+        }]
     }
+
+    if (config.evergreen)
+        lastEvents.push({
+            "Timestamp": 240.181076,
+            "Name": "EvergreenExitTriggered",
+            "ContractSessionId": sessionid,
+            "ContractId": contractid,
+            "Value": "",
+            "UserId": userID,
+            "SessionId": SESSION_ID,
+            "Origin": "gameclient",
+            "Id": uuidv4()
+        },)
+
+
+    console.log(lastEvents)
 
     let Eresult = await (await fetch("https://hm3-service.hitman.io/authentication/api/userchannel/EventsService/SaveEvents2",
         {
@@ -360,9 +432,7 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
             headers: { Authorization: config.oauthToken },
             body: JSON.stringify({
                 "userId": userID,
-                "values": [
-                    last
-                ],
+                "values": lastEvents,
                 "lastEventTicks": "637961581105885696",
                 "clienttype": "gameclient",
                 "lastPushDt": "0"
@@ -370,23 +440,9 @@ async function fake_complete(contractid, config: FakeCompleteConfig) {
         })).json()
 }
 
-async function getExp(oauthToken) {
+export async function getExp(oauthToken) {
     return (await (await fetch("https://hm3-service.hitman.io/profiles/page/GetPlayerProfileXpData", { headers: { Authorization: oauthToken } })).json() as any).data.PlayerProfileXpData;
 }
-
-// !(async () => {
-//     let lastExp = await getExp()
-//     for (let x = 0; x < 100; x++) {
-//         console.log(`Starting ${x}th XP: ${lastExp.XP} Level: ${lastExp.Level}`)
-//         let ts = new Date().getTime();
-//         await fake_complete(CONTRACT_ID, {
-//             complete: true
-//         })
-//         let currentExp = await getExp()
-//         console.log(`Finished ${x}th XP: ${currentExp.XP}(+${currentExp.XP - lastExp.XP}) Level: ${currentExp.Level}(+${currentExp.Level - lastExp.Level}) Time used: ${((new Date().getTime() - ts) / 1000).toFixed(2)}s`)
-//         lastExp = currentExp
-//     }
-// })()
 
 function makeid(length) {
     var result = '';
@@ -475,22 +531,22 @@ async function fetchChallengeFromChallengeService(contractid: string, oauthToken
     return challenges
 }
 
-async function checkPlayed(contractid: string, token:string){
-    let res=await(await fetch("https://hm3-service.hitman.io/profiles/page/LeaderboardEntries?contractid="+contractid+"&page=999999&type=singleplayer&difficultyLevel=2",{
-        headers:{
-            Authorization:token,
-            Version:"8.9.0",
+async function checkPlayed(contractid: string, token: string) {
+    let res = await (await fetch("https://hm3-service.hitman.io/profiles/page/LeaderboardEntries?contractid=" + contractid + "&page=999999&type=singleplayer&difficultyLevel=2", {
+        headers: {
+            Authorization: token,
+            Version: "8.9.0",
         }
     })).json() as any
 
-    return res.data.PlayerEntry!==null
+    return res.data.PlayerEntry !== null
 }
 
-async function runFakeComplete(contractid: string, config: FakeCompleteConfig) {
-    let lastExp = await getExp(config.oauthToken)
+async function runFakeComplete(contractid: string, config: FakeCompleteConfig, getExpFn = getExp) {
+    let lastExp = await getExpFn(config.oauthToken)
     let ts = new Date().getTime();
     await fake_complete(contractid, config)
-    let currentExp = await getExp(config.oauthToken)
+    let currentExp = await getExpFn(config.oauthToken)
     let time = ((new Date().getTime() - ts) / 1000);
     let deltaExp = currentExp.XP - lastExp.XP;
     let speed = (deltaExp / time);
