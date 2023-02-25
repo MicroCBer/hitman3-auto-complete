@@ -21,7 +21,9 @@ interface FakeCompleteConfig {
     challenges?: string[] | (() => any)[],
     contractType?: "elusive" | "usercreate" | "evergreen",
     oauthToken: string,
-    forceGetforplay?: boolean
+    forceGetforplay?: boolean,
+    evergreen?: boolean,
+    evergreen_asleader?: boolean
 }
 
 export async function fake_complete(contractid, config: FakeCompleteConfig) {
@@ -150,7 +152,7 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             "Origin": "gameclient",
             "Id": uuidv4(),
             "UserId": userID,
-            
+
         }))
     }
 
@@ -255,6 +257,45 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
         })
     }
 
+    function addSyndicateTargetEvent(repoid: string) {
+        killEvents.push(...makeEvents(
+            [
+
+                {
+                    "Timestamp": 0.199999,
+                    "Name": "AddSyndicateTarget",
+                    "Value": {
+                        "repoID": repoid
+                    },
+                    "Origin": "gameclient",
+                },
+                {
+                    "Name": "TargetPickedConfirm",
+                    "Value": {
+                        "RepositoryId": repoid
+                    },
+                    "XboxGameMode": 2.000000,
+                    "XboxDifficulty": 0.000000,
+                    "Origin": "gameclient",
+                }
+            ]
+        ))
+    }
+
+    function addSyndicateMainTargetEvent(repoid: string) {
+        killEvents.push(...makeEvents(
+            [
+                {
+                    "Timestamp": 0.000000,
+                    "Name": "SetupTarget",
+                    "Value": {
+                        "name_metricvalue": repoid
+                    },
+                }
+            ]
+        ))
+    }
+
 
     if (config.challenges) {
         for (let challenge of config.challenges) {
@@ -278,6 +319,10 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
     else
         for (let objective of config.targetList) {
             if (config.pickup) addPickTargetEvent(objective)
+            if (config.evergreen) {
+                if(config.evergreen_asleader) addSyndicateMainTargetEvent(objective)
+                else addSyndicateTargetEvent(objective)
+            }
             addKillEvent(objective)
         }
 
@@ -289,8 +334,6 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
 
     if (!config.silent)
         console.log(`Uploading kill events(${killEvents.length})`)
-
-    console.log(killEvents)
 
     if (config.uploadIn1Req)
         await (await fetch("https://hm3-service.hitman.io/authentication/api/userchannel/EventsService/SaveEvents2",
