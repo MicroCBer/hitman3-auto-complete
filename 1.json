@@ -1,0 +1,417 @@
+{
+    "template": null,
+    "data": {
+        "MissionReward": {
+            "LocationProgression": {
+                "LevelInfo": [
+                    0,
+                    5000,
+                    10000,
+                    17000,
+                    24000,
+                    31000,
+                    38000,
+                    45000,
+                    52000,
+                    61000,
+                    70000,
+                    79000,
+                    88000,
+                    97000,
+                    106000,
+                    115000,
+                    124000,
+                    133000,
+                    142000,
+                    154000,
+                    166000,
+                    178000,
+                    190000,
+                    202000,
+                    214000,
+                    226000,
+                    238000,
+                    250000,
+                    262000,
+                    280000,
+                    298000,
+                    316000,
+                    334000,
+                    352000,
+                    370000,
+                    388000,
+                    406000,
+                    424000,
+                    442000,
+                    468000,
+                    494000,
+                    520000,
+                    546000,
+                    572000,
+                    598000,
+                    624000,
+                    650000,
+                    676000,
+                    702000,
+                    736000,
+                    770000,
+                    804000,
+                    838000,
+                    872000,
+                    906000,
+                    940000,
+                    974000,
+                    1008000,
+                    1042000,
+                    1082000,
+                    1122000,
+                    1162000,
+                    1202000,
+                    1242000,
+                    1282000,
+                    1322000,
+                    1362000,
+                    1402000,
+                    1442000,
+                    1492000,
+                    1542000,
+                    1592000,
+                    1642000,
+                    1692000,
+                    1742000,
+                    1792000,
+                    1842000,
+                    1892000,
+                    1942000,
+                    2002000,
+                    2062000,
+                    2122000,
+                    2182000,
+                    2242000,
+                    2302000,
+                    2362000,
+                    2422000,
+                    2482000,
+                    2542000,
+                    2692000,
+                    2842000,
+                    2992000,
+                    3142000,
+                    3292000,
+                    3442000,
+                    3592000,
+                    3742000,
+                    3892000,
+                    4042000,
+                    4192000
+                ],
+                "XP": 4192000,
+                "Level": 100,
+                "Completion": 1,
+                "XPGain": 0,
+                "HideProgression": false
+            },
+            "ProfileProgression": {
+                "LevelInfo": [
+                    5652000,
+                    5658000,
+                    5664000,
+                    5670000,
+                    5676000,
+                    5682000,
+                    5688000,
+                    5694000,
+                    5700000,
+                    5706000,
+                    5712000,
+                    5718000,
+                    5724000,
+                    5730000,
+                    5736000,
+                    5742000,
+                    5748000,
+                    5754000,
+                    5760000,
+                    5766000
+                ],
+                "LevelInfoOffset": 942,
+                "XP": 5760120,
+                "Level": 961,
+                "XPGain": 104000
+            },
+            "Challenges": [
+                {
+                    "ChallengeId": "092c8fbe-694f-4e05-a7b7-55d6d1627ceb",
+                    "ChallengeTags": [
+                        "actionreward",
+                        "easy",
+                        "mission"
+                    ],
+                    "ChallengeName": "UI_EVERGREEN_ACTION_XP_COMPLETE_HOT",
+                    "ChallengeImageUrl": null,
+                    "ChallengeDescription": "",
+                    "XPGain": 2000,
+                    "IsGlobal": true,
+                    "IsActionReward": true,
+                    "Drops": []
+                },
+                {
+                    "ChallengeId": "6fe13c33-96c4-4b2d-9318-da7881b478ae",
+                    "ChallengeTags": [
+                        "actionreward",
+                        "easy",
+                        "mission"
+                    ],
+                    "ChallengeName": "UI_EVERGREEN_ACTION_XP_COMPLETE_PAYOUT_OBJ",
+                    "ChallengeImageUrl": null,
+                    "ChallengeDescription": "",
+                    "XPGain": 100000,
+                    "IsGlobal": true,
+                    "IsActionReward": true,
+                    "Drops": []
+                },
+                {
+                    "ChallengeId": "c706ddd0-7c9e-4075-b4b0-4e734c8ccc5e",
+                    "ChallengeTags": [
+                        "actionreward",
+                        "easy",
+                        "elimination"
+                    ],
+                    "ChallengeName": "UI_EVERGREEN_ACTION_XP_KILL_HOT_LEADER",
+                    "ChallengeImageUrl": null,
+                    "ChallengeDescription": "",
+                    "XPGain": 2000,
+                    "IsGlobal": true,
+                    "IsActionReward": true,
+                    "Drops": []
+                }
+            ],
+            "Drops": [],
+            "OpportunityRewards": [],
+            "CompletionData": {
+                "Level": 100,
+                "MaxLevel": 100,
+                "XP": 4192000,
+                "Completion": 1,
+                "XpLeft": 0,
+                "Id": "LOCATION_PARENT_SNUG",
+                "SubLocationId": "LOCATION_SNUG",
+                "HideProgression": false,
+                "IsLocationProgression": true,
+                "Name": null
+            },
+            "ChallengeCompletion": {
+                "ChallengesCount": 99,
+                "CompletedChallengesCount": 27
+            },
+            "ContractChallengeCompletion": {
+                "ChallengesCount": 99,
+                "CompletedChallengesCount": 27
+            },
+            "LocationCompletionPercent": 27.272727966308594
+        },
+        "ScoreOverview": {
+            "XP": 4192000,
+            "Level": 100,
+            "Completion": 1,
+            "XPGain": 0,
+            "ChallengesCompleted": 3,
+            "LocationHideProgression": false,
+            "ProfileId1": "fe76faee-ecdc-4dd7-a6d5-c5b84054a87c",
+            "stars": 4,
+            "ScoreDetails": {
+                "Headlines": [
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_OBJECTIVES",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 1,
+                        "fractionDenominator": 4,
+                        "scoreTotal": 0
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_NOT_SPOTTED",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 20000
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_NO_NOTICED_KILLS",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 20000
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_NO_BODIES_FOUND",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 20000
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_NO_RECORDINGS",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 20000
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_KILL_PENALTY",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 0
+                    },
+                    {
+                        "type": "summary",
+                        "headline": "UI_SCORING_SUMMARY_TIME",
+                        "count": "11:22:40",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 800
+                    },
+                    {
+                        "type": "total",
+                        "headline": "UI_SCORING_SUMMARY_TOTAL",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 0
+                    },
+                    {
+                        "type": "subtotal",
+                        "headline": "UI_SCORING_SUMMARY_SUBTOTAL",
+                        "count": "",
+                        "scoreIsFloatingType": false,
+                        "fractionNumerator": 0,
+                        "fractionDenominator": 0,
+                        "scoreTotal": 80800
+                    }
+                ]
+            },
+            "ContractScore": {
+                "Total": 0,
+                "AchievedMasteries": [
+                    {
+                        "score": 0,
+                        "RatioParts": 0,
+                        "RatioTotal": 0,
+                        "Id": "KillPenaltyMastery",
+                        "BaseScore": -5000
+                    }
+                ],
+                "AwardedBonuses": [
+                    {
+                        "Score": 20000,
+                        "Id": "NoWitnessedKillsBonus",
+                        "FractionNumerator": 0,
+                        "FractionDenominator": 0
+                    },
+                    {
+                        "Score": 20000,
+                        "Id": "NoBodiesFound",
+                        "FractionNumerator": 0,
+                        "FractionDenominator": 0
+                    },
+                    {
+                        "Score": 20000,
+                        "Id": "Unspotted",
+                        "FractionNumerator": 0,
+                        "FractionDenominator": 0
+                    },
+                    {
+                        "Score": 20000,
+                        "Id": "SecurityErased",
+                        "FractionNumerator": 0,
+                        "FractionDenominator": 0
+                    },
+                    {
+                        "Score": 800,
+                        "Id": "SwiftExecution",
+                        "FractionNumerator": 0,
+                        "FractionDenominator": 0
+                    }
+                ],
+                "TotalNoMultipliers": 80000,
+                "TimeUsedSecs": 40960,
+                "StarCount": 4,
+                "FailedBonuses": [
+                    {
+                        "Score": 0,
+                        "Id": "AllObjectivesCompletedBonus",
+                        "FractionNumerator": 1,
+                        "FractionDenominator": 4
+                    }
+                ],
+                "SilentAssassin": false
+            },
+            "SilentAssassin": false,
+            "RankCount": 39657,
+            "Rank": 3339,
+            "FriendsRankCount": 1,
+            "FriendsRank": 1,
+            "IsPartOfTopScores": false,
+            "IsNewBestScore": false,
+            "IsNewBestTime": false,
+            "IsNewBestStars": false,
+            "Percentile": {
+                "Spread": [
+                    0.5236654281616211,
+                    0.26613208651542664,
+                    0.09723377972841263,
+                    0.050054214894771576,
+                    0.058703381568193436,
+                    0.003933731932193041,
+                    0.0002269460674142465,
+                    0.00002521622991480399,
+                    0.00002521622991480399,
+                    0
+                ],
+                "Index": 0
+            },
+            "Evergreen": {
+                "Payout": 0,
+                "EndStateEventName": "ScoringScreenEndState_HotCompleted",
+                "PayoutsCompleted": [
+                    {
+                        "Name": "UI_CONTRACT_EVERGREEN_MILD_CLIENT_REQUIREMENTS_LIMITED_DISGUISE_TITLE",
+                        "Payout": 1000,
+                        "IsPrestige": false
+                    }
+                ],
+                "PayoutsFailed": [
+                    {
+                        "Name": "UI_CONTRACT_EVERGREEN_MILD_CLIENT_REQUIREMENTS_DONT_TAKE_DAMAGE_TITLE",
+                        "Payout": 500,
+                        "IsPrestige": false
+                    },
+                    {
+                        "Name": "UI_CONTRACT_EVERGREEN_MILD_CLIENT_REQUIREMENTS_KillGuard_SubMachineGun_TITLE",
+                        "Payout": 1000,
+                        "IsPrestige": false
+                    },
+                    {
+                        "Name": "UI_CONTRACT_EVERGREEN_MILD_CLIENT_REQUIREMENTS_SASO_TITLE",
+                        "Payout": 50000,
+                        "IsPrestige": true
+                    }
+                ]
+            }
+        }
+    }
+}

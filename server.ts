@@ -1,17 +1,18 @@
 import Koa from "koa"
 import koaBody from "koa-body";
 import { checkPlayed, fetchChallengeFromChallengeService, runFakeComplete } from "./main"
+import { fakeCompleteEvergreen } from "./test.ts";
 const app = new Koa();
 
 enum TaskType {
     CompleteAllETs = "CompleteAllETs",
-    CompleteAll7DS = "CompleteAll7DS"
+    CompleteAll7DS = "CompleteAll7DS",
+    CompleteFreelancer = "CompleteFreelancer",
 }
 
 enum TaskStatus {
     Succeeded = "Succeeded", Failed = "Failed", Processing = "Processing", Waiting = "Waiting"
 }
-
 
 type Task = {
     type: TaskType,
@@ -29,23 +30,47 @@ app.use(koaBody());
 let processingTask = false;
 
 async function processTask(task: Task) {
-    let log=''
-    console.log=(...args)=>{
-        log+=args.join(" ")+"\n"
+    let log = ''
+    console.log = (...args) => {
+        log += args.join(" ") + "\n"
     }
 
     switch (task.type) {
+        case TaskType.CompleteFreelancer: {
+            while (1) {
+                const result = await fakeCompleteEvergreen(task.token);
+
+                const contractEnd = (await (await fetch(`https://hm3-service.hitman.io/profiles/page/MissionEnd?contractSessionId=${result.sessionid}&masteryUnlockableId=`,
+                    { headers: { Authorization: task.token } })).json() as any);
+
+
+                if (contractEnd.data.MissionReward?.CompletionData) {
+                    console.log(`
+    ----------------------
+    Evergreen Completed
+    
+    Level: ${contractEnd.data.MissionReward?.LocationProgression?.Level}
+    XPGain: ${contractEnd.data.MissionReward?.LocationProgression?.XPGain}
+    XPSource: 
+    ${contractEnd.data.MissionReward?.Challenges?.map(v => `${v.ChallengeName}: ${v.XPGain}`).join("\n")}
+    ----------------------
+            `)
+
+                    if (contractEnd.data.MissionReward?.LocationProgression?.Level === 100) break;
+                }
+            }
+        }
         case TaskType.CompleteAllETs: {
             let totalDeltaXP = 0;
 
-            const ETs = ["8043a9b9-8ba6-453d-83f8-aa507c5a1c08","507b8b04-8b93-4420-84d1-c0c3a5ce56c3","28aa7003-1917-46e4-bad4-0f43112aae4e","dce08b14-b14a-4c14-aea9-a2eb5222f889","654685ab-d52d-49cb-815d-f98ee00454d3","ca86c369-320f-49ca-989d-bd727951b9ef","81e01a84-7c7f-4967-a4e6-a5450c5cf274","9f5b8d74-1f70-49ea-94e2-21d2de3e5cf3","244eb6cf-6a0c-422e-ac03-4ffd85657852","655c5a57-69d1-48b6-a14b-2ae396c16174","deace35f-ab6d-44c9-b1a6-98757e854f74","7ad29733-7060-4c44-8780-b76482fb1937","d8eb1a30-44e3-4792-b45d-2156fd744be1","043585fa-455f-481c-aa0a-8d31d063b93a","f11f5299-12d1-4c65-a7d3-d65b22d94285"]
+            const ETs = ["8043a9b9-8ba6-453d-83f8-aa507c5a1c08", "507b8b04-8b93-4420-84d1-c0c3a5ce56c3", "28aa7003-1917-46e4-bad4-0f43112aae4e", "dce08b14-b14a-4c14-aea9-a2eb5222f889", "654685ab-d52d-49cb-815d-f98ee00454d3", "ca86c369-320f-49ca-989d-bd727951b9ef", "81e01a84-7c7f-4967-a4e6-a5450c5cf274", "9f5b8d74-1f70-49ea-94e2-21d2de3e5cf3", "244eb6cf-6a0c-422e-ac03-4ffd85657852", "655c5a57-69d1-48b6-a14b-2ae396c16174", "deace35f-ab6d-44c9-b1a6-98757e854f74", "7ad29733-7060-4c44-8780-b76482fb1937", "d8eb1a30-44e3-4792-b45d-2156fd744be1", "043585fa-455f-481c-aa0a-8d31d063b93a", "f11f5299-12d1-4c65-a7d3-d65b22d94285"]
 
-            let n=0;
+            let n = 0;
             for (let et of ETs) {
-                task.pendingText=`${n}/${ETs.length} Pending: ${et} \n\nLog:${log}`
+                task.pendingText = `${n}/${ETs.length} Pending: ${et} \n\nLog:${log}`
                 console.log("Pending:", et);
 
-                if(await checkPlayed(et,task.token)){
+                if (await checkPlayed(et, task.token)) {
                     console.log(`Played, ${et} skipped.`)
                     n++;
                     continue
@@ -71,12 +96,12 @@ async function processTask(task: Task) {
 
             const contracts = ["ae04c7a0-4028-4524-b27f-6a62f020fdca", "494d97a6-9e31-45e0-9dae-f3793c731336", "a838c4b0-7db5-4ac7-8d52-e8c5b82aa376", "e3b65e65-636b-4dfd-bb42-65a18c5dce4a", "5121acde-313d-4517-ae70-6a54ca5d775a", "8c8ed496-948f-4672-879b-4d9575406577", "8e95dcd0-704f-4121-8be6-088a3812f838"]
 
-            let n=0;
+            let n = 0;
             for (let contract of contracts) {
-                task.pendingText=`${n}/${contracts.length} Pending: ${contract} \n\nLog:\n${log}`
+                task.pendingText = `${n}/${contracts.length} Pending: ${contract} \n\nLog:\n${log}`
                 console.log("Pending:", contract);
 
-                if(await checkPlayed(contract,task.token)){
+                if (await checkPlayed(contract, task.token)) {
                     console.log(`Played, ${contract} skipped.`)
                     n++;
                     continue
@@ -158,6 +183,7 @@ app.use(ctx => {
 
         matchTask("CompleteAllETs");
         matchTask("CompleteAll7DS");
+        matchTask("CompleteFreelancer");
 
         if (validTask) {
             ctx.body = { status: "Succeeded" };

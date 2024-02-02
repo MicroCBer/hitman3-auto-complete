@@ -19,11 +19,16 @@ interface FakeCompleteConfig {
     silent?: boolean,
     doorUnlockEventNum?: number,
     challenges?: string[] | (() => any)[],
+    postEvents?: (() => any)[]
     contractType?: "elusive" | "usercreate" | "evergreen",
     oauthToken: string,
     forceGetforplay?: boolean,
     evergreen?: boolean,
     evergreen_asleader?: boolean
+}
+
+export function getUserID(token) {
+    return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
 }
 
 export async function fake_complete(contractid, config: FakeCompleteConfig) {
@@ -36,9 +41,6 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
     )
     ).json() as any;
 
-    function getUserID(token) {
-        return JSON.parse(Buffer.from(token.split('.')[1], 'base64').toString()).sub;
-    }
     let userID = getUserID(config.oauthToken)
 
     if (!get4play2.ContractSessionId && config.forceGetforplay) throw Error("Get for play 2 failed!")
@@ -152,7 +154,7 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             "Origin": "gameclient",
             "Id": uuidv4(),
             "UserId": userID,
-
+            "Timestamp": config.time ?? 40960
         }))
     }
 
@@ -204,6 +206,16 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             "Origin": "gameclient",
             "Id": uuidv4()
         })
+    }
+
+    function addTargetEliminatedEvent() {
+        killEvents.push(...makeEvents(
+            {
+                "Timestamp": 76.743004,
+                "Name": "TargetEliminated",
+                "Value": "",
+            }
+        ))
     }
 
     function addDoorUnlocked() {
@@ -314,14 +326,15 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             if (objective.Definition.Scope === "Hit") {
                 let repoid = objective.Definition.Context.Targets[0];
                 addKillEvent(repoid);
+                addTargetEliminatedEvent();
             }
         }
     else
         for (let objective of config.targetList) {
             if (config.pickup) addPickTargetEvent(objective)
             if (config.evergreen) {
-                if(config.evergreen_asleader) addSyndicateMainTargetEvent(objective)
-                else addSyndicateTargetEvent(objective)
+                if (config.evergreen_asleader) addSyndicateMainTargetEvent(objective)
+                addSyndicateTargetEvent(objective)
             }
             addKillEvent(objective)
         }
@@ -380,7 +393,7 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
         }
     }
 
-    let last: any = {
+    let last: any = [{
         "Name": "ContractFailed",
         "ContractSessionId": sessionid,
         "ContractId": contractid,
@@ -392,10 +405,10 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
         "SessionId": SESSION_ID,
         "Origin": "gameclient",
         "Id": uuidv4()
-    };
+    }];
 
     if (config.complete) {
-        last = {
+        last = [{
             "Name": "ContractEnd",
             "ContractSessionId": sessionid,
             "ContractId": contractid,
@@ -410,10 +423,17 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             "SessionId": SESSION_ID,
             "Origin": "gameclient",
             "Id": uuidv4()
-        }
+        }]
     }
 
 
+
+    if (config.postEvents) {
+        for (let event of config.postEvents) {
+            const result = event();
+            last.push(...makeEvents(result));
+        }
+    }
 
 
     let Eresult = await (await fetch("https://hm3-service.hitman.io/authentication/api/userchannel/EventsService/SaveEvents2",
@@ -422,25 +442,14 @@ export async function fake_complete(contractid, config: FakeCompleteConfig) {
             headers: { Authorization: config.oauthToken },
             body: JSON.stringify({
                 "userId": userID,
-                "values": [
-                    last,
-                    {
-                        "Timestamp": 240.181076,
-                        "Name": "EvergreenExitTriggered",
-                        "ContractSessionId": sessionid,
-                        "ContractId": contractid,
-                        "Value": "",
-                        "UserId": userID,
-                        "SessionId": SESSION_ID,
-                        "Origin": "gameclient",
-                        "Id": uuidv4()
-                    },
-                ],
+                "values": last,
                 "lastEventTicks": "637961581105885696",
                 "clienttype": "gameclient",
                 "lastPushDt": "0"
             })
         })).json()
+
+    return { sessionid }
 }
 
 export async function getExp(oauthToken) {
